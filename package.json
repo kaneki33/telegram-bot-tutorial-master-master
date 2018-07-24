@@ -24,6 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "node-telegram-bot-api": "^0.30.0",
+    "pg": "^7.4.3",
     "save": "^2.3.2",
     "telebot": "^1.2.6",
     "telegraf": "^3.21.2",

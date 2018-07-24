@@ -17,6 +17,8 @@ const bot = new Telegraf(token,
     polling: true,
     });
 //start
+bot.use(Telegraf.log())
+
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`, Markup
   .keyboard([
@@ -52,10 +54,9 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
   return ctx.reply(`Please Don't come back ${ctx.from.first_name} `)
 })
     
-bot.on('text', (ctx) => {
-  ctx.telegram.sendMessage(ctx.message.chat.id, `GO TO HELL!!!!!`) })
 
-    bot.use(Telegraf.log())
+
+    
     
     bot.hears('Onetime', ({ reply }) =>
       reply('One time keyboard', Markup
@@ -169,7 +170,26 @@ bot.on('text', (ctx) => {
     
     
 
-    
+    const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true
+});
+
+app.get('/db', async (req, res) => {
+  try {
+    const client = await pool.connect()
+    const result = await client.query('SELECT * FROM test_table');
+    res.render('pages/db', result);
+    client.release();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
+});
+bot.on('text', (ctx) => {
+  ctx.telegram.sendMessage(ctx.message.chat.id, `GO TO HELL!!!!!`) })
+
     bot.startPolling()
         
     

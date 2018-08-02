@@ -85,7 +85,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
     bot.hears('🔍 Search', ctx => ctx.reply('Yay!'))
     bot.hears('📢 Ads', ctx => ctx.reply('Free hugs. Call now!'))
     
-    bot.hears('Special', (ctx) => {
+    bot.command('special', (ctx) => {
       return ctx.reply('Special buttons keyboard', Extra.markup((markup) => {
         return markup.resize()
           .keyboard([
@@ -95,7 +95,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
       }))
     })
     
-    bot.hears('Pyramid', (ctx) => {
+    bot.command('pyramid', (ctx) => {
       return ctx.reply('Keyboard wrap', Extra.markup(
         Markup.keyboard(['one', 'two', 'three', 'four', 'five', 'six'], {
           wrap: (btn, index, currentRow) => currentRow.length >= (index + 1) / 2
@@ -103,13 +103,13 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
       ))
     })
     
-    bot.hears('Simple', (ctx) => {
+    bot.command('simple', (ctx) => {
       return ctx.replyWithHTML('<b>Coke</b> or <i>Pepsi?</i>', Extra.markup(
         Markup.keyboard(['👥 Share\n /inline', 'Pepsi'])
       ))
     })
     
-    bot.hears('Inline', (ctx) => {
+    bot.command('inline', (ctx) => {
       return ctx.reply('<b>Choose your Anonymity settings?</b>', Extra.HTML().markup((m) =>
         m.inlineKeyboard([
           m.callbackButton('Keep me anonymous', 'You are hidden'),
@@ -117,7 +117,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
         ])))
     })
     
-    bot.hears('Random', (ctx) => {
+    bot.command('random', (ctx) => {
       return ctx.reply('random example',
         Markup.inlineKeyboard([
           Markup.callbackButton('Coke', 'Coke'),
@@ -127,7 +127,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
       )
     })
     
-    bot.hears('Caption', (ctx) => {
+    bot.command('caption', (ctx) => {
       return ctx.replyWithPhoto({ url: 'https://picsum.photos/200/300/?random' },
         Extra.load({ caption: 'Caption' })
           .markdown()

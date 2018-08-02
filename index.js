@@ -212,9 +212,10 @@ function exitHandler(exitCode) {
     storage.flush();
     process.exit(exitCode);
 }
-bot.telegram.setWebhook("https://serene-beyond-78420.herokuapp.com/" + token);
-
-bot.startWebhook('/'+token, null, process.env.PORT);
 
 process.on('SIGINT', exitHandler.bind(null, 0));
 process.on('uncaughtException', exitHandler.bind(null, 1));
+
+bot.telegram.setWebhook("https://serene-beyond-78420.herokuapp.com/" + token);
+
+bot.startWebhook('/'+token, null, process.env.PORT);

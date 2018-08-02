@@ -156,7 +156,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
 bot.on('text', (ctx) => {
   ctx.telegram.sendMessage(ctx.message.chat.id, `GO TO HELL!!!!!`) })
   
-    /*bot.action('plain', async (ctx) => {
+    bot.action('plain', async (ctx) => {
       ctx.editMessageCaption('Caption', Markup.inlineKeyboard([
         Markup.callbackButton('Plain', 'plain'),
         Markup.callbackButton('Italic', 'italic')
@@ -206,7 +206,7 @@ app.get('/db', async (req, res) => {
    
 
 
-*/
+
    //const  OtherwiseController = require('./controllers/otherwise');
 //bot.router.otherwise(new OtherwiseController());
 

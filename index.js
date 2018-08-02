@@ -12,6 +12,10 @@ const Markup = require('telegraf/markup'),
 
     
  token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
+ bot.telegram.setWebhook("https://serene-beyond-78420.herokuapp.com/" + token);
+
+bot.startWebhook('/'+token, null, process.env.PORT);
+
 const bot = new Telegraf(token,
     {
     polling: true,

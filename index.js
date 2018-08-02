@@ -24,10 +24,10 @@ bot.use(Telegraf.log())
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`, Markup
   .keyboard([
-    ['Caption'], // Row0 with 1  buttons
-    [' Custom ', 'Onetime'], // Row1 with 2 buttons
-    ['Special', 'Pyramid'], // Row2 with 2 buttons
-    ['Simple', 'Random', 'Inline'] // Row3 with 3 buttons
+    ['/Caption'], // Row0 with 1  buttons
+    [' /Custom ', '/Onetime'], // Row1 with 2 buttons
+    ['/Special', '/Pyramid'], // Row2 with 2 buttons
+    ['/Simple', '/Random', '/Inline'] // Row3 with 3 buttons
   ])
   .oneTime()
   .resize()
@@ -37,10 +37,10 @@ bot.command('start', (ctx) => {
 bot.command('Menu', ({ reply }) => {
   return reply('Custom buttons keyboard', Markup
     .keyboard([
-      ['Caption'], // Row0 with 1  buttons
-      [' Custom ', 'Onetime'], // Row1 with 2 buttons
-      ['Special', 'Pyramid'], // Row2 with 2 buttons
-      ['Simple', 'Random', 'Inline'] // Row3 with 3 buttons
+      ['/Caption'], // Row0 with 1  buttons
+      [' /Custom ', '/Onetime'], // Row1 with 2 buttons
+      ['/Special', '/Pyramid'], // Row2 with 2 buttons
+      ['/Simple', '/Random', '/Inline'] // Row3 with 3 buttons
     ])
     .oneTime()
     .resize()

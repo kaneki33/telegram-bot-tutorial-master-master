@@ -152,6 +152,10 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
       return ctx.reply('👍').then(() => next())
     })
     
+    
+bot.on('text', (ctx) => {
+  ctx.telegram.sendMessage(ctx.message.chat.id, `GO TO HELL!!!!!`) })
+  
     /*bot.action('plain', async (ctx) => {
       ctx.editMessageCaption('Caption', Markup.inlineKeyboard([
         Markup.callbackButton('Plain', 'plain'),
@@ -173,8 +177,6 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
     
 
 
-bot.on('text', (ctx) => {
-  ctx.telegram.sendMessage(ctx.message.chat.id, `GO TO HELL!!!!!`) })
 
 
 

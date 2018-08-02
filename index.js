@@ -152,7 +152,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
       return ctx.reply('👍').then(() => next())
     })
     
-    bot.action('plain', async (ctx) => {
+    /*bot.action('plain', async (ctx) => {
       ctx.editMessageCaption('Caption', Markup.inlineKeyboard([
         Markup.callbackButton('Plain', 'plain'),
         Markup.callbackButton('Italic', 'italic')
@@ -204,7 +204,7 @@ app.get('/db', async (req, res) => {
    
 
 
-
+*/
    //const  OtherwiseController = require('./controllers/otherwise');
 //bot.router.otherwise(new OtherwiseController());
 

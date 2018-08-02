@@ -4,8 +4,7 @@
   "description": "Tutorial onhHow to create a basic Telegram bot",
   "main": "index.js",
   "engines": {
-    "node": ">= 7.6.0",
-    "npm": "6.1.0"
+    "node": ">= 7.6.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -40,7 +40,7 @@ bot.command('Menu', ({ reply }) => {
   return reply('Custom buttons keyboard', Markup
     .keyboard([
       ['/caption'], // Row0 with 1  buttons
-      [' /custom ', '/onetime'], // Row1 with 2 buttons
+      [' /Custom ', 'Onetime'], // Row1 with 2 buttons
       ['/special', '/pyramid'], // Row2 with 2 buttons
       ['/simple', '/random', '/inline'] // Row3 with 3 buttons
     ])
@@ -51,7 +51,7 @@ bot.command('Menu', ({ reply }) => {
 })
 
     bot.hears(['hi', 'Hi'] ,  (ctx) => {
-  return ctx.reply(`وش تبي  `)
+  return ctx.reply(`Hey there! `)
 })
 
 bot.hears(['bye', 'Bye'],  (ctx) => {
@@ -142,7 +142,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
       )
     })
     
-    bot.hears(/\/wrap (\d+)/, (ctx) => {
+    bot.command(/\/wrap (\d+)/, (ctx) => {
       return ctx.reply('Keyboard wrap', Extra.markup(
         Markup.keyboard(['one', 'two', 'three', 'four', 'five', 'six'], {
           columns: parseInt(ctx.match[1])

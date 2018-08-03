@@ -175,42 +175,8 @@ bot.on('text', (ctx) => {
     bot.action(/.+/, (ctx) => {
       return ctx.answerCbQuery(`Oh, ${ctx.match[0]}! ${ctx.from.first_name}`)
     })
-    
-    
-
-
-
-
-
-
-
-  const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true
-});
-
-app.get('/db', async (req, res) => {
-  try {
-    const client = await pool.connect()
-    const result = await client.query('SELECT * FROM test_table');
-    res.render('pages/db', result);
-    client.release();
-  } catch (err) {
-    console.error(err);
-    res.send("Error " + err);
-  }
-});
-    bot.startPolling()
-        
-    
-
-   
-
-
-*/
-   //const  OtherwiseController = require('./controllers/otherwise');
-//bot.router.otherwise(new OtherwiseController());
+  const  OtherwiseController = require('./controllers/otherwise');
+  bot.router.otherwise(new OtherwiseController()); */
 
 function exitHandler(exitCode) {
     storage.flush();

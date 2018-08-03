@@ -142,7 +142,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
       )
     })
     
-    bot.command(/\/wrap (\d+)/, (ctx) => {
+    bot.hears(/\/wrap (\d+)/, (ctx) => {
       return ctx.reply('Keyboard wrap', Extra.markup(
         Markup.keyboard(['one', 'two', 'three', 'four', 'five', 'six'], {
           columns: parseInt(ctx.match[1])

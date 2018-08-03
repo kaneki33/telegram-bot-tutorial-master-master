@@ -73,7 +73,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
         .extra()
       )
     })
-    buttons.push(Markup.switchToChatButton("Back ", "ok"));
+    bot.push(Markup.switchToChatButton("Back ", "ok"));
 ctx.reply("back text", Markup
     .inlineKeyboard(buttons)
     .removeKeyboard()

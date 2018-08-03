@@ -25,7 +25,7 @@ bot.use(Telegraf.log())
 
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`,Menu)})
-
+  
 bot.command('Menu', ({ reply }) => {
   return reply('Custom buttons keyboard', Markup
     .keyboard([
@@ -73,11 +73,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
         .extra()
       )
     })
-    bot.push(Markup.switchToChatButton("Back ", "ok"));
-ctx.reply("back text", Markup
-    .inlineKeyboard(buttons)
-    .removeKeyboard()
-    .extra());
+    
     bot.hears('🔍 Search', ctx => ctx.reply('Yay!'))
     bot.hears('📢 Ads', ctx => ctx.reply('Free hugs. Call now!'))
     

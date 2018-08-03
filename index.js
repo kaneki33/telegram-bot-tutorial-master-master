@@ -71,7 +71,7 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
       )
     )
     
-    bot.hears('Custom', ({ reply }) => {
+    bot.command('Custom', ({ reply }) => {
       return reply('Custom buttons keyboard', Markup
         .keyboard([
           ['🔍 Search', '😎 Popular'], // Row1 with 2 buttons

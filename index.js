@@ -2,7 +2,7 @@
 //
 const Telegraf = require('telegraf')
 const Extra = require('telegraf/extra')
-const Markup = require('telegraf/markup'),
+const Markup = require('telegraf/markup')
 const Extra = require('telegraf/extra')
 const fs = require('fs')
     PersistentMemoryStorage = require('./adapters/PersistentMemoryStorage'),

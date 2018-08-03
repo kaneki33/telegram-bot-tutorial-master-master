@@ -23,8 +23,7 @@ bot.use(Telegraf.log())
 
 
 
-bot.command('start', (ctx) => {
-  return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`,Menu)})
+
   
 bot.command('Menu', ({ reply }) => {
   return reply('Custom buttons keyboard', Markup
@@ -39,7 +38,8 @@ bot.command('Menu', ({ reply }) => {
     .extra()
   )
 })
-
+bot.command('start', (ctx) => {
+  return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`,Menu)})
     bot.hears(['hi', 'Hi'] ,  (ctx) => {
   return ctx.reply(`وش تبي  `)
 })

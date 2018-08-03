@@ -27,7 +27,7 @@ bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`, Markup
   .keyboard([
     ['/caption'], // Row0 with 1  buttons
-      [' /custom ', '/onetime'], // Row1 with 2 buttons
+      [' /Custom ', 'Onetime'], // Row1 with 2 buttons
       ['/special', '/pyramid'], // Row2 with 2 buttons
       ['/simple', '/random', '/inline'] // Row3 with 3 buttons
   ])

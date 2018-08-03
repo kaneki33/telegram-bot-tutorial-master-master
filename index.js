@@ -2,8 +2,7 @@
 //
 const Telegraf = require('telegraf')
 const Extra = require('telegraf/extra')
-const Markup = require('telegraf/markup')
-const fs = require('fs')
+const Markup = require('telegraf/markup'),
     PersistentMemoryStorage = require('./adapters/PersistentMemoryStorage'),
     storage = new PersistentMemoryStorage(
         `${__dirname}/data/userStorage.json`,
@@ -22,86 +21,11 @@ const bot = new Telegraf(token,
 //start
 bot.use(Telegraf.log())
 
-const AnimationUrl1 = 'https://media.giphy.com/media/ya4eevXU490Iw/giphy.gif'
-const AnimationUrl2 = 'https://media.giphy.com/media/LrmU6jXIjwziE/giphy.gif'
-
-
-
-bot.command('local', (ctx) => ctx.replyWithPhoto({ source: '/cats/cat1.jpeg' }))
-bot.command('stream', (ctx) => ctx.replyWithPhoto({ source: fs.createReadStream('/cats/cat2.jpeg') }))
-bot.command('buffer', (ctx) => ctx.replyWithPhoto({ source: fs.readFileSync('/cats/cat3.jpeg') }))
-bot.command('pipe', (ctx) => ctx.replyWithPhoto({ url: 'https://picsum.photos/200/300/?random' }))
-bot.command('url', (ctx) => ctx.replyWithPhoto('https://picsum.photos/200/300/?random'))
-bot.command('animation', (ctx) => ctx.replyWithAnimation(AnimationUrl1))
-bot.command('pipe_animation', (ctx) => ctx.replyWithAnimation({ url: AnimationUrl1 }))
-
-bot.command('caption', (ctx) => ctx.replyWithPhoto('https://picsum.photos/200/300/?random', {
-  caption: 'Caption *text*',
-  parse_mode: 'Markdown'
-}))
-
-bot.command('album', (ctx) => {
-  ctx.replyWithMediaGroup([
-    {
-      'media': 'AgADBAADXME4GxQXZAc6zcjjVhXkE9FAuxkABAIQ3xv265UJKGYEAAEC',
-      'caption': 'From file_id',
-      'type': 'photo'
-    },
-    {
-      'media': 'https://picsum.photos/200/500/',
-      'caption': 'From URL',
-      'type': 'photo'
-    },
-    {
-      'media': { url: 'https://picsum.photos/200/300/?random' },
-      'caption': 'Piped from URL',
-      'type': 'photo'
-    },
-    {
-      'media': { source: '/cats/cat1.jpeg' },
-      'caption': 'From file',
-      'type': 'photo'
-    },
-    {
-      'media': { source: fs.createReadStream('/cats/cat2.jpeg') },
-      'caption': 'From stream',
-      'type': 'photo'
-    },
-    {
-      'media': { source: fs.readFileSync('/cats/cat3.jpeg') },
-      'caption': 'From buffer',
-      'type': 'photo'
-    }
-  ])
-})
-
-bot.command('edit_media', (ctx) => ctx.replyWithAnimation(AnimationUrl1, Extra.markup((m) =>
-  m.inlineKeyboard([
-    m.callbackButton('Change media', 'swap_media')
-  ])
-)))
-
-bot.action('swap_media', (ctx) => ctx.editMessageMedia({
-  type: 'animation',
-  media: AnimationUrl2
-}))
-
-bot.startPolling()
 
 
 bot.command('start', (ctx) => {
-  return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`, Markup
-  .keyboard([
-    ['/caption'], // Row0 with 1  buttons
-      [' /custom ', '/onetime'], // Row1 with 2 buttons
-      ['/special', '/pyramid'], // Row2 with 2 buttons
-      ['/simple', '/random', '/inline'] // Row3 with 3 buttons
-  ])
-  .oneTime()
-  .resize()
-  .extra()
-)
-})
+  return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`,Menu)})
+
 bot.command('Menu', ({ reply }) => {
   return reply('Custom buttons keyboard', Markup
     .keyboard([
@@ -149,7 +73,11 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
         .extra()
       )
     })
-    
+    buttons.push(Markup.switchToChatButton("Back ", "ok"));
+ctx.reply("back text", Markup
+    .inlineKeyboard(buttons)
+    .removeKeyboard()
+    .extra());
     bot.hears('🔍 Search', ctx => ctx.reply('Yay!'))
     bot.hears('📢 Ads', ctx => ctx.reply('Free hugs. Call now!'))
     

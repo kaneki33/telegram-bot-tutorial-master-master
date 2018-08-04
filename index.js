@@ -12,7 +12,7 @@ const Markup = require('telegraf/markup'),
    
 */
 const TeleBot = require('../');
- token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
+// token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
 
 const bot = new TeleBot('497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q');
 

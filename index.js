@@ -11,10 +11,10 @@ const Markup = require('telegraf/markup'),
     ),
    
 */
-    
+const TeleBot = require('../');
  token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
- const TeleBot = require('../');
-const bot = new TeleBot(token);
+
+const bot = new TeleBot('497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q');
 
 bot.on('/time', msg => {
 

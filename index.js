@@ -1,6 +1,5 @@
 'use strict';
-
-/*
+//
 const Telegraf = require('telegraf')
 const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup'),
@@ -10,79 +9,11 @@ const Markup = require('telegraf/markup'),
         `${__dirname}/data/chatStorage.json`
     ),
    
-*/
+
     
- //token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
- const botgram = require("botgram")
-const bot = botgram("497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q")
-bot.command("start", function (msg, reply, next) {
-  console.log("Received a /start command from", msg.from.username);
-});
+ token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
+ 
 
-bot.text(function (msg, reply, next) {
-  console.log("Received a text message:", msg.text);
-});
-
-bot.contact(function (msg, reply, next) {
-  console.log("User %s sent us a contact:", msg.from.firstname);
-  console.log(" * Phone: %s", msg.phone);
-  console.log(" * Name: %s %s", msg.firstname, msg.lastname);
-  reply.text("Ok, got that contact.");
-});
-
-bot.video(function (msg, reply, next) {
-  reply.text("That's a " + msg.width + "x" + msg.height + " video.");
-});
-
-bot.location(function (msg, reply, next) {
-  reply.text("You seem to be at " + msg.latitude + ", " + msg.longitude);
-});
-bot.command("time", function (msg, reply, next) {
-  reply.text("The current time is: " + Date());
-});
-
-bot.all(function (msg, reply, next) {
-  if (msg.from.id === 5981248 || msg.from.id === 9824830)
-    msg.hasPrivileges = true;
-  next();
-});
-
-bot.command("time", function (msg, reply, next) {
-  reply.text("The current time is: " + Date());
-});
-
-bot.command("quit", function (msg, reply, next) {
-  if (!msg.hasPrivileges) {
-    reply.text("Only some users can quit the bot.");
-    return;
-  }
-  reply.text("Shutting down the bot.");
-  process.exit(0);
-});
-
-bot.command("pwd", function (msg, reply, next) {
-  reply.text("Bot is running from: " + require("path").resolve(__dirname));
-});
-
-bot.command("eval", function (msg, reply, next) {
-  if (!msg.hasPrivileges) {
-    reply.text("Did you SERIOUSLY thought I was going to evaluate code from strangers?");
-    return;
-  }
-  var code = msg.args();
-  try {
-    reply.text("Result: " + eval(code).toString());
-  } catch (e) {
-    reply.text(e.toString());
-  }
-});
-bot.contact(function (msg, reply, next) {
-  console.log("User %s sent us a contact:", msg.from.firstname);
-  console.log(" * Phone: %s", msg.phone);
-  console.log(" * Name: %s %s", msg.firstname, msg.lastname);
-  reply.text("Ok, got that contact.");
-});
-/*
 const bot = new Telegraf(token,
     {
     polling: true,

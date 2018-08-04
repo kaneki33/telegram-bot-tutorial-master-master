@@ -1,7 +1,7 @@
 {
-  "name": "telegram-demo-todo-bot",
+  "name": "kaneki-bot",
   "version": "1.0.0",
-  "description": "Tutorial onhHow to create a basic Telegram bot",
+  "description": "Start it and you wil know! ",
   "main": "index.js",
   "engines": {
     "node": ">= 7.6.0"

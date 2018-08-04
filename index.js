@@ -11,38 +11,77 @@ const Markup = require('telegraf/markup'),
     ),
    
 */
-const TeleBot = require('../');
-// token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
+    
+ token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
 
-const bot = new TeleBot('497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q');
-
-bot.on('/time', msg => {
-
-    return bot.sendMessage(msg.from.id, 'Getting time...').then(re => {
-        // Start updating message
-        updateTime(msg.from.id, re.message_id);
-    });
-
+var bot = botgram("497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q");
+bot.command("start", function (msg, reply, next) {
+  console.log("Received a /start command from", msg.from.username);
 });
 
-function updateTime(chatId, messageId) {
+bot.text(function (msg, reply, next) {
+  console.log("Received a text message:", msg.text);
+});
 
-    // Update every second
-    setInterval(() => {
-        bot.editMessageText(
-            {chatId, messageId}, `<b>Current time:</b> ${ time() }`,
-            {parseMode: 'html'}
-        ).catch(error => console.log('Error:', error));
-    }, 1000);
+bot.contact(function (msg, reply, next) {
+  console.log("User %s sent us a contact:", msg.from.firstname);
+  console.log(" * Phone: %s", msg.phone);
+  console.log(" * Name: %s %s", msg.firstname, msg.lastname);
+  reply.text("Ok, got that contact.");
+});
 
-}
+bot.video(function (msg, reply, next) {
+  reply.text("That's a " + msg.width + "x" + msg.height + " video.");
+});
 
-bot.start();
+bot.location(function (msg, reply, next) {
+  reply.text("You seem to be at " + msg.latitude + ", " + msg.longitude);
+});
+bot.command("time", function (msg, reply, next) {
+  reply.text("The current time is: " + Date());
+});
 
-// Get current time
-function time() {
-    return new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
-}
+bot.all(function (msg, reply, next) {
+  if (msg.from.id === 5981248 || msg.from.id === 9824830)
+    msg.hasPrivileges = true;
+  next();
+});
+
+bot.command("time", function (msg, reply, next) {
+  reply.text("The current time is: " + Date());
+});
+
+bot.command("quit", function (msg, reply, next) {
+  if (!msg.hasPrivileges) {
+    reply.text("Only some users can quit the bot.");
+    return;
+  }
+  reply.text("Shutting down the bot.");
+  process.exit(0);
+});
+
+bot.command("pwd", function (msg, reply, next) {
+  reply.text("Bot is running from: " + require("path").resolve(__dirname));
+});
+
+bot.command("eval", function (msg, reply, next) {
+  if (!msg.hasPrivileges) {
+    reply.text("Did you SERIOUSLY thought I was going to evaluate code from strangers?");
+    return;
+  }
+  var code = msg.args();
+  try {
+    reply.text("Result: " + eval(code).toString());
+  } catch (e) {
+    reply.text(e.toString());
+  }
+});
+bot.contact(function (msg, reply, next) {
+  console.log("User %s sent us a contact:", msg.from.firstname);
+  console.log(" * Phone: %s", msg.phone);
+  console.log(" * Name: %s %s", msg.firstname, msg.lastname);
+  reply.text("Ok, got that contact.");
+});
 /*
 const bot = new Telegraf(token,
     {

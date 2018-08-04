@@ -12,9 +12,9 @@ const Markup = require('telegraf/markup'),
    
 */
     
- token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
+ //token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
 
-var bot = botgram("497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q");
+var bot = botgram('497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q');
 bot.command("start", function (msg, reply, next) {
   console.log("Received a /start command from", msg.from.username);
 });

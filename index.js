@@ -1,5 +1,6 @@
 'use strict';
-//
+
+/*
 const Telegraf = require('telegraf')
 const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup'),
@@ -9,11 +10,40 @@ const Markup = require('telegraf/markup'),
         `${__dirname}/data/chatStorage.json`
     ),
    
-
+*/
     
  token = '497990783:AAHe42KNeF-A7KnJYJmOLXC7zyDsuA_Uq5Q';
- 
+ const TeleBot = require('../');
+const bot = new TeleBot(token);
 
+bot.on('/time', msg => {
+
+    return bot.sendMessage(msg.from.id, 'Getting time...').then(re => {
+        // Start updating message
+        updateTime(msg.from.id, re.message_id);
+    });
+
+});
+
+function updateTime(chatId, messageId) {
+
+    // Update every second
+    setInterval(() => {
+        bot.editMessageText(
+            {chatId, messageId}, `<b>Current time:</b> ${ time() }`,
+            {parseMode: 'html'}
+        ).catch(error => console.log('Error:', error));
+    }, 1000);
+
+}
+
+bot.start();
+
+// Get current time
+function time() {
+    return new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
+}
+/*
 const bot = new Telegraf(token,
     {
     polling: true,

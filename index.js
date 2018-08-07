@@ -22,10 +22,42 @@ const bot = new Telegraf(token,
 //start
 bot.use(Telegraf.log())
 
-bot.on("ready", function () {
-  var reply = bot.reply(383063938);
-  reply.text("Bot started ");
+const commandArgs = () => (ctx, next) => {
+  if (ctx.updateType === 'message' && ctx.updateSubType === 'text') {
+    const text = ctx.update.message.text.toLowerCase();
+    if (text.startsWith('/')) {
+      const match = text.match(/^\/([^\s]+)\s?(.+)?/);
+      let args = [];
+      let command;
+      if (match !== null) {
+        if (match[1]) {
+          command = match[1];
+        }
+        if (match[2]) {
+          args = match[2].split(' ');
+        }
+      }
+
+      ctx.state.command = {
+        raw: text,
+        command,
+        args,
+      };
+    }
+  }
+  return next();
+};
+
+module.exports = commandArgs;
+
+bot.command('lights', (ctx) => ctx.reply('Hello from the bot side.'));
+// start listening for messages
+bot.command('lights', (ctx) => {
+  console.log(ctx.state.command); // command object
 });
+bot.use(commandArgsMiddleware());
+bot.startPolling();
+
 
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`, Markup

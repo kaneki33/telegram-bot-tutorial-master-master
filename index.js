@@ -24,13 +24,13 @@ bot.use(Telegraf.log())
 
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name \nPlease enter the nick-name you want to be called \nNotice: Its an irreversible action so please choose well`
-,  (ctx) => { userId = ` ${ctx.from.id}`.name() }
+,  (ctx) => { userI = ` ${ctx.from.id}`.name() }
 
 )})
 
 
 bot.hears(/\/show /,  (ctx) => {
-  return ctx.reply(`Hey there! `)
+  return ctx.reply(userI)
 })
 
 //END

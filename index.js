@@ -35,7 +35,7 @@ var nick = fs.readFileSync(dirname + '/nicknames.json')
 
 
 bot.command('start', (ctx) => {
-  return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name \nPlease enter the nick-name you want to be called \nNotice: Its an irreversible action so please choose well`
+  return ctx.reply(`welcome \nPlease enter the nick-name you want to be called \n\n Notice: Its an irreversible action so please choose well`
 , addnick(ctx.from.id) 
 
 )})

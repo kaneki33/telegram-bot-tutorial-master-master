@@ -25,7 +25,7 @@ bot.use(Telegraf.log());
 (ctx) => {userId = ctx.from.id }
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name \nPlease enter the nick-name you want to be called \nNotice: Its an irreversible actionso please choose well`
-,   'this is ur ID %s' ,userId
+,   'this is ur ID %s' ,ctx.from.id
 
 )})
 

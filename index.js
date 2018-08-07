@@ -4,7 +4,7 @@
 const Telegraf = require('telegraf')
 const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup'),
-PersistentMemoryStorage = require('./adapters/PersistentMemoryStorage'),
+    PersistentMemoryStorage = require('./adapters/PersistentMemoryStorage'),
     storage = new PersistentMemoryStorage(
         `${__dirname}/data/userStorage.json`,
         `${__dirname}/data/chatStorage.json`
@@ -22,10 +22,9 @@ const bot = new Telegraf(token,
 //start
 bot.use(Telegraf.log())
 
-//let userId = ctx.from.id ;
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name \nPlease enter the nick-name you want to be called \nNotice: Its an irreversible actionso please choose well`
-,  'this is ur ID %s' ,userId
+,  userId = ctx.from.id , 'this is ur ID %s' ,userId
 
 )})
 

@@ -28,7 +28,7 @@ var nick = fs.readFileSync(dirname + '/nicknames.json')
 
  nick.nicknames[userId] = name
 
- fs.writeFileSync(__dirname + '/nicknames.json', nick)
+ fs.writeFileSync(dirname + '/nicknames.json', nick)
  console.log('added a nickname')
  
 }

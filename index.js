@@ -21,10 +21,10 @@ const bot = new Telegraf(token,
     });
 //start
 bot.use(Telegraf.log())
-
+let userId = ctx.from.id ;
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name \nPlease enter the nick-name you want to be called \nNotice: Its an irreversible actionso please choose well`
-,  userId = ctx.from.id , 'this is ur ID %s' ,userId
+,  'this is ur ID %s' ,userId
 
 )})
 

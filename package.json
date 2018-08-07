@@ -28,6 +28,7 @@
     "node-telegram-bot-api": "^0.30.0",
     "path": "^0.12.7",
     "pg": "^7.4.3",
+    "prompt": "^1.0.0",
     "save": "^2.3.2",
     "telebot": "^1.2.6",
     "telegraf": "^3.21.2",

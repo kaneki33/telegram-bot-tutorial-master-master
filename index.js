@@ -23,7 +23,9 @@ const bot = new Telegraf(token,
 bot.use(Telegraf.log())
 
 bot.command('start', (ctx) => {
-  return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name \nPlease enter the nick-name you want to be called \nNotice: Its an irreversible actionso please choose well \nthis is ur ID %s' , ${ctx.from.id}
+  return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name \nPlease enter the nick-name you want to be called \nNotice: Its an irreversible action so please choose well`
+,  (ctx) => { `this is ur ID ${ctx.from.first_name}` }
+
 )})
 
 /*

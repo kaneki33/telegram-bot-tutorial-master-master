@@ -1,6 +1,6 @@
 'use strict';
 //
-//var fs = require('fs'); 
+var fs = require('fs'); 
 const Telegraf = require('telegraf')
 const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup'),
@@ -24,20 +24,14 @@ bot.use(Telegraf.log())
 
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name \nPlease enter the nick-name you want to be called \nNotice: Its an irreversible action so please choose well`
-,  (ctx) => { `this is ur ID ${ctx.from.id}` }
+,  (ctx) => { userId = ` ${ctx.from.id}`.name() }
 
 )})
 
-/*
 
-fs.writeFileSync(__dirname + 'nicknames.json', 'utf8')
-var nick = readDisk(__dirname + '/nicknames.json')
-
- nick.nicknames[userId] = name
-
- writeDisk(__dirname + '/nicknames.json', nick)
- console.log('added a nickname')
-*/
+bot.hears(/\/show /,  (ctx) => {
+  return ctx.reply(`Hey there! `)
+})
 
 //END
 

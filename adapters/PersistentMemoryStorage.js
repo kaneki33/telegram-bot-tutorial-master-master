@@ -45,6 +45,17 @@ class PersistentMemoryStorage extends Telegram.BaseStorage {
         fs.writeFileSync(this.chatStoragePath, JSON.stringify(this._storage.chatStorage));
         this.clean = true;
     }
+    name() {
+        if (this.clean) return;
+      fs.writeFileSync(__dirname + 'nicknames.json', 'utf8')
+      var nick = readDisk(__dirname + '/nicknames.json')
+      
+       nick.nicknames[userId] = name
+      
+       writeDisk(__dirname + '/nicknames.json', nick)
+       console.log('added a nickname')
+       this.clean = true;
+      }
 }
 
 module.exports = PersistentMemoryStorage;

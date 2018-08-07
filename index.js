@@ -4,7 +4,7 @@
 const Telegraf = require('telegraf')
 const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup'),
-    PersistentMemoryStorage = require('./adapters/PersistentMemoryStorage'),
+PersistentMemoryStorage = require('./adapters/PersistentMemoryStorage'),
     storage = new PersistentMemoryStorage(
         `${__dirname}/data/userStorage.json`,
         `${__dirname}/data/chatStorage.json`

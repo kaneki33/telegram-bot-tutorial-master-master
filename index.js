@@ -1,5 +1,6 @@
 'use strict';
 //
+const botgram = require("botgram")
 const Telegraf = require('telegraf')
 const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup'),
@@ -21,11 +22,9 @@ const bot = new Telegraf(token,
 //start
 bot.use(Telegraf.log())
 
-
 bot.on("ready", function () {
-  console.log("Bot (%s) starting to process messages.", bot.get("firstname"));
-  // bot.link() needs username to be set, so it also can't be called earlier
-  console.log("Talk to me: %s", bot.link());
+  var reply = bot.reply(383063938);
+  reply.text("Bot started ");
 });
 
 bot.command('start', (ctx) => {

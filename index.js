@@ -36,24 +36,9 @@ var nick = fs.readFileSync(dirname + '/nicknames.json')
 
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome \nPlease enter the nick-name you want to be called \n\n Notice: Its an irreversible action so please choose well`
-//, addnick(ctx.from.id) 
+, addnick(ctx.message) 
 
 )})
-var prompt = require('prompt');
-
-  prompt.start();
-
-  prompt.get(['username', 'email'], function (err, result) {
-    if (err) { return onErr(err); }
-    console.log('Command-line input received:');
-    console.log('  Username: ' + result.username);
-    console.log('  Email: ' + result.email);
-  });
-
-  function onErr(err) {
-    console.log(err);
-    return 1;
-  }
 
 //END
 
@@ -175,11 +160,11 @@ bot.hears(['bye', 'Bye'],  (ctx) => {
       return ctx.reply('👍').then(() => next())
     })
     
-    
+   /* 
 bot.on('text', (ctx) => {
   ctx.telegram.sendMessage(ctx.message.chat.id, `GO TO HELL!!!!!`) })
   
-    /*bot.action('plain', async (ctx) => {
+    bot.action('plain', async (ctx) => {
       ctx.editMessageCaption('Caption', Markup.inlineKeyboard([
         Markup.callbackButton('Plain', 'plain'),
         Markup.callbackButton('Italic', 'italic')

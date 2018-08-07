@@ -22,6 +22,11 @@ const bot = new Telegraf(token,
 bot.use(Telegraf.log())
 
 
+bot.on("ready", function () {
+  console.log("Bot (%s) starting to process messages.", bot.get("firstname"));
+  // bot.link() needs username to be set, so it also can't be called earlier
+  console.log("Talk to me: %s", bot.link());
+});
 
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome  ${ctx.from.first_name}! .. thats a nice name`, Markup

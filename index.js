@@ -22,7 +22,7 @@ const bot = new Telegraf(token,
 //start
 bot.use(Telegraf.log())
 function addnick(userId) {
-  if (this.clean) return;
+  
 fs.writeFileSync(__dirname + 'nicknames.json', 'utf8')
 var nick = fs.readFileSync(dirname + '/nicknames.json')
 
@@ -30,7 +30,7 @@ var nick = fs.readFileSync(dirname + '/nicknames.json')
 
  fs.writeFileSync(dirname + '/nicknames.json', nick)
  console.log('added a nickname')
- this.clean = true;
+ 
 }
 
 

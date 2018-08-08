@@ -1,0 +1,17 @@
+{
+  "name": "abdo-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "abdo",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.13.4",
+    "mongoose": "^5.2.7",
+    "node-telegram-bot-api": "^0.21.1"
+  }
+}

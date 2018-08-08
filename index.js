@@ -21,7 +21,7 @@ const bot = new Telegraf(token,
     });
 //start
 bot.use(Telegraf.log())
-function addnick(userId) {
+function addnick(userid,nickname) {
   
 fs.writeFileSync(__dirname + 'nicknames.json', 'utf8')
 var nick = fs.readFileSync(dirname + '/nicknames.json')
@@ -36,7 +36,7 @@ var nick = fs.readFileSync(dirname + '/nicknames.json')
 
 bot.command('start', (ctx) => {
   return ctx.reply(`welcome \nPlease enter the nick-name you want to be called \n\n Notice: Its an irreversible action so please choose well`
-, addnick(ctx.message) 
+, addnick(ctx.from.id,ctx.message) 
 
 )})
 

@@ -28,7 +28,7 @@ module.exports = (bot, msg) => {
     }
 User.findOne({id}).then((user) => {
   if (user) {
-    User.findOneAndUpdate({id}, newUser).then(() =. {
+    User.findOneAndUpdate({id}, newUser).then(() => {
       bot.sendMessage(msg.chat.id, `تم تحديث اللقب بنجاح يا ${nick} 😍`)
 
     })

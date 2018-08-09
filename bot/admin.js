@@ -1,7 +1,7 @@
 const Reply = require('../modules/reply')
 module.exports = (bot, msg) => {
 switch (true) {
-    case msg.text.startsWith('Rep'):
+    case msg.text.startsWith('ep'):
         try {
           const matches = msg.text.match(/Rep(\s+)(.+)(\s+)-(\s+)(.+)/)
           new Reply({

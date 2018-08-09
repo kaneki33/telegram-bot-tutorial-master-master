@@ -52,3 +52,15 @@ User.findOne({id}).then((user) => {
             break;
     }
 }
+bot.onText('معلوماتي', (msg) => {
+  const chatId = msg.chat.id;
+
+  // send a message to the chat acknowledging receipt of their message
+  bot.sendMessage(' Name : ',msg.from.first_name ,'\n\nID : ', msg.from.id );
+});
+bot.onText(/خالة قولي (.+)/, (msg, match) => {
+  const chatId = msg.chat.id;
+  const resp = match[1]; 
+
+  bot.sendMessage(chatId, resp);
+});

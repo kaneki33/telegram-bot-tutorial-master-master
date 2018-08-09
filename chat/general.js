@@ -5,7 +5,7 @@ switch (true) {
     bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)
     break
     case (msg.from.id == '280942102' || msg.from.id == '383063938'):
-    admin(bot, msg)
+    //admin(bot, msg)
     break
     default:
     break

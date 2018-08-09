@@ -1,8 +1,8 @@
 const token   = process.env.TOKEN
 const Bot     = require('node-telegram-bot-api')
-const private = require('./private')
-const group   = require('./group')
-const general = require('./general')
+const private = require('./chat/private')
+const group   = require('./chat/group')
+const general = require('./chat/general')
 let bot
 
 if (process.env.NODE_ENV === 'production') {

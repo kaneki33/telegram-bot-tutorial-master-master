@@ -64,14 +64,16 @@ switch (true) {
         مثال:
         Edit الكلمة - الرد
               `
-          bot.sendMessage(msg.chat.id, error, {
+          bot.sendMessage(msg.chat.id,`عيون الحجة 😍 `, error, {
             reply_to_message_id: msg.message_id
           })
         }
         break
         case msg.text == 'حجة':
    {
-    bot.sendMessage(msg.chat.id, `عيون الحجة 😍 `)
+    bot.sendMessage(msg.chat.id,`عيون الحجة 😍 `, {
+      reply_to_message_id: msg.message_id
+    })
    }
     default:
         break

@@ -58,11 +58,12 @@ User.findOne({id}).then((user) => {
         
         default:
             break;
+            bot.onText(/خالة قولي (.+)/, (msg, match) => {
+              const chatId = msg.chat.id;
+              const resp = match[1]; 
+            
+              bot.sendMessage(chatId, resp);
+            });
     }
-    bot.onText(/خالة قولي (.+)/, (msg, match) => {
-      const chatId = msg.chat.id;
-      const resp = match[1]; 
     
-      bot.sendMessage(chatId, resp);
-    });
 }

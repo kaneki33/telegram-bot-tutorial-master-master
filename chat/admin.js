@@ -46,7 +46,7 @@ switch (true) {
           })
         }
         break
-         case text.startsWith('Del'):
+         case text.startsWith('Edit'):
          try {
           const matches = text.match(/Edit(\s+)(.+)(\s+)-(\s+)(.+)/)
           Reply.findOne({ask: matches[2]}).then((reply) => {

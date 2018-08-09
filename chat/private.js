@@ -9,7 +9,7 @@ switch (true) {
    if (!user) {
     bot.sendMessage(msg.chat.id, `مرحبا 😊\nرجاءا ارسل لي لقبك\nمثال:\nلقبي فلان`)
    } else {
-       bot.sendMessage(msg.chat.id, `مرحبا   ${user.nickName}`)
+       bot.sendMessage(msg.chat.id, `مرحبا يا ${user.nickName}`)
    }
   break
   case msg.text.startsWith('لقبي'):

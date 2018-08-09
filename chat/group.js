@@ -1,5 +1,6 @@
 const Reply = require('../modules/reply')
 const User  = require('../modules/user')
+const id = msg.from.id
 module.exports = async (bot, msg) => {
     const reply = await Reply.findOne({ ask: msg.text })
     if(reply) {

@@ -26,8 +26,7 @@ switch (true) {
         case msg.text.startsWith('del'):
         try {
           const matches = msg.text.match(/del(\s+)(.+)/)
-          const rep = matches[2]
-          console.log(matches)
+          const rep = matches[1]
           Reply.findOneAndRemove({rep}).then((success) => {
             if (success) {
                 bot.sendMessage(msg.chat.id, 'تم حذف الرد بنجاح')

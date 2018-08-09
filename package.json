@@ -11,6 +11,7 @@
     "body-parser": "^1.15.0",
     "dotenv": "^4.0.0",
     "express": "^4.13.4",
+    "lyric-get": "^1.0.3",
     "mongoose": "^5.2.7",
     "node-telegram-bot-api": "^0.21.1"
   }

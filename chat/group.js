@@ -8,7 +8,7 @@ module.exports = async (bot, msg) => {
                 reply_to_message_id: msg.message_id
               })            }
             else {
-                bot.sendMessage(msg.chat.id, reply.rep, { reply_to_message_id: msg.message_id})
+                bot.sendMessage(msg.chat.id, reply.rep)
 
             
             }

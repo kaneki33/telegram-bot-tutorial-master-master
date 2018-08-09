@@ -1,7 +1,8 @@
 const token   = process.env.TOKEN
 const Bot     = require('node-telegram-bot-api')
-const private = require('./private')
-const group   = require('./group')
+const private = require('./chat/private')
+const group   = require('./chat/group')
+const general = require('./chat/general')
 let bot
 
 if (process.env.NODE_ENV === 'production') {
@@ -16,6 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
 
 bot.on('message', (msg) => {
+  general(bot, msg)
   switch (true) {
     case (msg.chat.type == 'private'):
       private(bot, msg)

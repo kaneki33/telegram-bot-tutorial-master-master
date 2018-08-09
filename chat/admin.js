@@ -48,12 +48,21 @@ switch (true) {
         case msg.text.startsWith('Edit'):
         try {
           const matches = msg.text.match(/Edit(\s+)(.+)(\s+)-(\s+)(.+)/)
-          Reply.findOne({ask: matches[2]}).then((reply) => {
+          Reply.findOne({
+            ask: matches[2]
+          }).then((reply) => {
             if(reply) {
-            Reply.findOneAndUpdate({ask: reply.ask}, {$set: {rep: matches[5]}}).then(() => {
-            bot.sendMessage(msg.chat.id, 'تم تحديث الرد بنجاح')
+            Reply.findOneAndUpdate({
+              ask: reply.ask
+            }, {
+              $set: {
+                rep: matches[5]
+              }}).then(() => {
+             bot.sendMessage(msg.chat.id, 'تم تحديث الرد بنجاح')
             })
-            }else {
+            }
+            else 
+            {
             bot.sendMessage(msg.chat.id, 'لم يتم العثور على الرد')
             }
             })

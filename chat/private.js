@@ -34,9 +34,7 @@ switch (true) {
                 })
     }
   break
-    case (msg.from.id == '280942102' || msg.from.id == '383063938'):
-      admin(bot, msg)
-    break
+    
     default:
     break
     }

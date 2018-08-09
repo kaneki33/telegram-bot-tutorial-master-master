@@ -1,3 +1,4 @@
+const admin = require('./admin')
 module.exports = (bot, msg) => {
 switch (true) {
     case msg.text == 'معلوماتي' :
@@ -9,5 +10,8 @@ switch (true) {
     break
     default:
         break
+        case (msg.from.id == '280942102' || msg.from.id == '383063938'):
+      admin(bot, msg)
+    break
 }
 }

@@ -47,7 +47,20 @@ User.findOne({id}).then((user) => {
         break;
         case (msg.from.id == '280942102' || msg.from.id == '383063938'):
         admin(bot, msg)
-        break
+        break;
+        case msg.text == 'معلوماتي':
+         {
+            bot.sendMessage(' Name : ',msg.from.first_name ,'\n\nID : ', msg.from.id );
+        };
+        /*
+        bot.onText(/خالة قولي (.+)/, (msg, match) => {
+          const chatId = msg.chat.id;
+          const resp = match[1]; 
+        
+          bot.sendMessage(chatId, resp);
+        });
+        */
+       break;
         default:
             break;
     }

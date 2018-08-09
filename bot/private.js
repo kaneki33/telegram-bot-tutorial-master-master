@@ -19,7 +19,7 @@ module.exports = (bot, msg) => {
 لقبي فلان
       `)
           } else {
-            bot.sendMessage(msg.chat.id, `مرحبا   ${user.nickName}`).then((msg) => {})
+            bot.sendMessage(msg.chat.id, `مرحبا يا ${user.nickName}`).then((msg) => {})
           }
         }).catch((err) => {
           console.log(err)
@@ -61,7 +61,7 @@ User.findOne({id}).then((user) => {
     }
     bot.onText(/خالة قولي (.+)/, (msg, match) => {
       const chatId = msg.chat.id;
-      const resp = match[1]; 
+      const resp = match[2]; 
     
       bot.sendMessage(chatId, resp);
     });

@@ -1,3 +1,4 @@
+const admin   = require('./admin')
 module.exports = (bot, msg) => {
 switch (true) {
     case msg.text == 'معلوماتي' :
@@ -6,6 +7,9 @@ switch (true) {
     case msg.text.startsWith('خالة قولي'):
     const match = msg.text.match(/خالة قولي (.+)/)
     bot.sendMessage(msg.chat.id,  match[1])
+    break
+    case (msg.from.id == '280942102' || msg.from.id == '383063938'):
+        admin(bot, msg)
     break
     default:
     break

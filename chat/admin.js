@@ -69,6 +69,10 @@ switch (true) {
           })
         }
         break
+        case msg.text == 'حجة':
+   {
+    bot.sendMessage(msg.chat.id, `عيون الحجة 😍 `)
+   }
     default:
         break
 }

@@ -1,9 +1,9 @@
 const User    = require('../modules/user')
 const admin   = require('./admin')
 module.exports = (bot, msg) => {
+  const id = msg.from.id
     switch (true) {
         case msg.text == '/start':
-        const id = msg.from.id
         User.findOne({id}).then((user) => {
           if (!user) {
             bot.sendMessage(msg.chat.id, `مرحبا 😊

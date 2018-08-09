@@ -1,12 +1,12 @@
 const Reply = require('../modules/reply')
 module.exports = (bot, msg) => {
 switch (true) {
-    case msg.text.startsWith('rep'):
+    case msg.text.startsWith('Rep'):
         try {
-          const matches = msg.text.match(/rep(\s+)(.+)(\s+)-(\s+)(.+)/)
+          const matches = msg.text.match(/Rep(\s+)(.+)(\s+)-(\s+)(.+)/)
           new Reply({
               ask: matches[2],
-              rep: matches[5]
+              Rep: matches[5]
           }).save(() => {
             bot.sendMessage(msg.chat.id, "تمت اضافة الرد بنجاح", {
                 reply_to_message_id: msg.message_id
@@ -16,16 +16,16 @@ switch (true) {
           const error = `
       الرجاء كتابة الامر بالصيغة الصحيحة
       مثال:
-      rep الكلمة - الرد
+      Rep الكلمة - الرد
               `
           bot.sendMessage(msg.chat.id, error, {
             reply_to_message_id: msg.message_id
           })
         }
         break
-        case msg.text.startsWith('del'):
+        case msg.text.startsWith('Del'):
         try {
-          const matches = msg.text.match(/del(\s+)(.+)/)
+          const matches = msg.text.match(/Del(\s+)(.+)/)
           const ask = matches[2]
           Reply.findOneAndRemove({ask}).then((success) => {
             if (success) {
@@ -38,7 +38,30 @@ switch (true) {
           const error = `
       الرجاء كتابة الامر بالصيغة الصحيحة
       مثال:
-      del الرد المراد حذفه
+      Del الرد المراد حذفه
+              `
+          bot.sendMessage(msg.chat.id, error, {
+            reply_to_message_id: msg.message_id
+          })
+        }
+        break
+        case msg.text.startsWith('Edit'):
+        try {
+          const matches = msg.text.match(/Edit(\s+)(.+)(\s+)-(\s+)(.+)/)
+          Reply.findOne({ask: matches[2]}).then((reply) => {
+            if(reply) {
+            Reply.findOneAndUpdate({ask: reply.ask}, {$set: {rep: matches[5]}}).then(() => {
+            bot.sendMessage(msg.chat.id, 'تم تحديث الرد بنجاح')
+            })
+            }else {
+            bot.sendMessage(msg.chat.id, 'لم يتم العثور على الرد')
+            }
+            })
+        } catch (e) {
+          const error = `
+      الرجاء كتابة الامر بالصيغة الصحيحة
+      مثال:
+      Edit الكلمة - الرد
               `
           bot.sendMessage(msg.chat.id, error, {
             reply_to_message_id: msg.message_id

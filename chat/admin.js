@@ -23,6 +23,28 @@ switch (true) {
           })
         }
         break
+        case msg.text.startsWith('del'):
+        try {
+          const matches = msg.text.match(/del(\s+)(.+)(\s+)/)
+          const rep = matches[2]
+          Reply.findOneAndRemove({rep}).then((success) => {
+            if (success) {
+                bot.sendMessage(msg.chat.id, 'تم حذف الرد بنجاح')
+            }else {
+                bot.sendMessage(msg.chat.id, 'لم يتم العثور على الرد')
+            }
+          })
+        } catch (e) {
+          const error = `
+      الرجاء كتابة الامر بالصيغة الصحيحة
+      مثال:
+      del الرد المراد حذفه
+              `
+          bot.sendMessage(msg.chat.id, error, {
+            reply_to_message_id: msg.message_id
+          })
+        }
+        break
     default:
         break
 }

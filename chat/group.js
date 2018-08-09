@@ -7,12 +7,8 @@ module.exports = async (bot, msg) => {
             bot.sendMessage(msg.chat.id,`عيون الحجة 😍 `, {
                 reply_to_message_id: msg.message_id
               })            }
-           else if(reply.ask == "انا مين؟" && msg.from.id == "383063938") {
-
-                bot.sendMessage(msg.chat.id,`  انت عزوووووز حبيبي    `, {
-                    reply_to_message_id: msg.message_id
-                  })            }
-                  else if(reply.ask == "انا مين؟" && msg.from.id == "383063938") {
+              
+                  else if(reply.ask == "مين انا يا حجة؟" && msg.from.id == "383063938") {
 
                     bot.sendMessage(msg.chat.id,`انت ${user.nickName} .. وكمان عزووووز الطيب 😍😍`, {
                         reply_to_message_id: msg.message_id

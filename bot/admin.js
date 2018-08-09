@@ -1,16 +1,16 @@
 const Reply = require('../modules/reply')
 module.exports = (bot, msg) => {
 switch (true) {
-    case msg.text.startsWith('ep'):
+    case msg.text.startsWith('rep'):
         try {
-          const matches = msg.text.match(/Rep(\s+)(.+)(\s+)-(\s+)(.+)/)
+          const matches = msg.text.match(/rep(\s+)(.+)(\s+)-(\s+)(.+)/)
           new Reply({
               ask: matches[2],
               rep: matches[5]
           }).save(() => {
             bot.sendMessage(msg.chat.id, "تمت اضافة الرد بنجاح", {
                 reply_to_message_id: msg.message_id
-              });
+              })
           })
         } catch (e) {
           const error = `
@@ -22,10 +22,8 @@ switch (true) {
             reply_to_message_id: msg.message_id
           })
         }
-
-        break;
-
+        break
     default:
-        break;
+        break
 }
 }

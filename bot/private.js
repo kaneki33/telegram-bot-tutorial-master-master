@@ -12,7 +12,7 @@ module.exports = (bot, msg) => {
 لقبي فلان
       `)
           } else {
-            bot.sendMessage(msg.chat.id, `مرحبا بك  ${user.nickName}`).then((msg) => {})
+            bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`).then((msg) => {})
           }
         }).catch((err) => {
           console.log(err)

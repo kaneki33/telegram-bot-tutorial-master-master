@@ -1,10 +1,10 @@
 const Reply = require('../modules/reply')
 module.exports = (bot, msg) => {
-  if(!msg.text) return;
+  const text = String(msg.text) || ""
 switch (true) {
-    case msg.text.startsWith('Rep'):
+    case text.startsWith('Rep'):
         try {
-          const matches = msg.text.match(/Rep(\s+)(.+)(\s+)-(\s+)(.+)/)
+          const matches = text.match(/Rep(\s+)(.+)(\s+)-(\s+)(.+)/)
           new Reply({
               ask: matches[2],
               rep: matches[5]
@@ -24,9 +24,9 @@ switch (true) {
           })
         }
         break
-        case msg.text.startsWith('Del'):
+        case text.startsWith('Del'):
         try {
-          const matches = msg.text.match(/Del(\s+)(.+)/)
+          const matches = text.match(/Del(\s+)(.+)/)
           const ask = matches[2]
           Reply.findOneAndRemove({ask}).then((success) => {
             if (success) {
@@ -46,9 +46,9 @@ switch (true) {
           })
         }
         break
-         case msg.text.startsWith('Del'):
+         case text.startsWith('Del'):
          try {
-          const matches = msg.text.match(/Edit(\s+)(.+)(\s+)-(\s+)(.+)/)
+          const matches = text.match(/Edit(\s+)(.+)(\s+)-(\s+)(.+)/)
           Reply.findOne({ask: matches[2]}).then((reply) => {
             if(reply) {
             Reply.findOneAndUpdate({ask: reply.ask}, {$set: {rep: matches[5]}}).then(() => {

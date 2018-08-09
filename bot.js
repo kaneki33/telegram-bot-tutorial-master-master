@@ -3,7 +3,7 @@ const Bot     = require('node-telegram-bot-api')
 const private = require('./chat/private')
 const group   = require('./chat/group')
 const general = require('./chat/general')
-const admin   = require('./admin')
+const admin   = require('./chat/admin')
 let bot
 
 if (process.env.NODE_ENV === 'production') {

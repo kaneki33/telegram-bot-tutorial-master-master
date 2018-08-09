@@ -50,7 +50,8 @@ User.findOne({id}).then((user) => {
         break;
         case msg.text == 'معلوماتي':
          {
-            bot.sendMessage(' Name : ',msg.from.first_name ,'\n\nID : ', msg.from.id );
+          bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)
+
         };
         /*
         bot.onText(/خالة قولي (.+)/, (msg, match) => {

@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
 
 bot.on('message', (msg) => {
-  general(bot, msg)
+ general(bot, msg)
   switch (true) {
     case (msg.chat.type == 'private'):
       private(bot, msg)

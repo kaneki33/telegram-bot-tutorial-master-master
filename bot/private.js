@@ -63,6 +63,6 @@ User.findOne({id}).then((user) => {
       const chatId = msg.chat.id;
       const resp = match[1]; 
     
-      bot.sendMessage(msg.chat.id, chatId, resp);
+      bot.sendMessage(chatId, resp);
     });
 }

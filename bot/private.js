@@ -3,14 +3,6 @@ const admin   = require('./admin')
 module.exports = (bot, msg) => {
   const id = msg.from.id
     switch (true) {
-      case msg.text == /خالة قولي (.+)/, (msg, match):
-         {
-          const chatId = msg.chat.id;
-          const resp = match[1]; 
-          bot.sendMessage(chatId, resp)
-
-        };
-        break;
       case msg.text == 'معلوماتي':
          {
           bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)
@@ -27,7 +19,7 @@ module.exports = (bot, msg) => {
 لقبي فلان
       `)
           } else {
-            bot.sendMessage(msg.chat.id, ` مرحبا بك يا ${user.nickName}`).then((msg) => {})
+            bot.sendMessage(msg.chat.id, `مرحبا بك  ${user.nickName}`).then((msg) => {})
           }
         }).catch((err) => {
           console.log(err)
@@ -64,8 +56,15 @@ User.findOne({id}).then((user) => {
         admin(bot, msg)
         break
         
-        
-        
+        /*
+        case msg.text == /خالة قولي (.+)/, (msg, match):
+         {
+          const chatId = msg.chat.id;
+          const resp = match[1]; 
+          bot.sendMessage(chatId, resp)
+
+        };
+        break;
 /*
         bot.onText(/خالة قولي (.+)/, (msg, match) => {
           const chatId = msg.chat.id;

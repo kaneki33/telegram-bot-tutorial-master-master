@@ -6,7 +6,7 @@ switch (true) {
           const matches = msg.text.match(/Rep(\s+)(.+)(\s+)-(\s+)(.+)/)
           new Reply({
               ask: matches[2],
-              Rep: matches[5]
+              rep: matches[5]
           }).save(() => {
             bot.sendMessage(msg.chat.id, "تمت اضافة الرد بنجاح", {
                 reply_to_message_id: msg.message_id

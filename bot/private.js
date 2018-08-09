@@ -19,7 +19,7 @@ module.exports = (bot, msg) => {
 لقبي فلان
       `)
           } else {
-            bot.sendMessage(msg.chat.id, ` مرحبا  يا ${user.nickName}`).then((msg) => {})
+            bot.sendMessage(msg.chat.id, `مرحبا   ${user.nickName}`).then((msg) => {})
           }
         }).catch((err) => {
           console.log(err)
@@ -63,6 +63,6 @@ User.findOne({id}).then((user) => {
       const chatId = msg.chat.id;
       const resp = match[1]; 
     
-      bot.sendMessage( resp);
+      bot.sendMessage(msg.chat.id, chatId, resp);
     });
 }

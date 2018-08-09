@@ -9,7 +9,7 @@ module.exports = (bot, msg) => {
 
         };
         break;
-        
+
         case msg.text == '/start':
         User.findOne({id}).then((user) => {
           if (!user) {
@@ -56,7 +56,16 @@ User.findOne({id}).then((user) => {
         admin(bot, msg)
         break
         
-        /*
+        
+        case msg.text == /خالة قولي (.+)/, (msg, match):
+         {
+          const chatId = msg.chat.id;
+          const resp = match[1]; 
+          bot.sendMessage(chatId, resp)
+
+        };
+        break;
+/*
         bot.onText(/خالة قولي (.+)/, (msg, match) => {
           const chatId = msg.chat.id;
           const resp = match[1]; 

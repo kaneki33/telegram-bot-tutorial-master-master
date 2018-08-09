@@ -55,15 +55,15 @@ User.findOne({id}).then((user) => {
         case (msg.from.id == '280942102' || msg.from.id == '383063938'):
         admin(bot, msg)
         break
+        bot.onText(/خالة قولي (.+)/, (msg, match) => {
+          const chatId = msg.chat.id;
+          const resp = match[1]; 
         
+          bot.sendMessage(chatId, resp);
+        });
         default:
             break;
-            bot.onText(/خالة قولي (.+)/, (msg, match) => {
-              const chatId = msg.chat.id;
-              const resp = match[1]; 
             
-              bot.sendMessage(chatId, resp);
-            });
     }
     
 }

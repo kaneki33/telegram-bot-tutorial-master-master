@@ -27,7 +27,7 @@ module.exports = (bot, msg) => {
        nickName:  nick
      }).save(() => {
 
-       bot.sendMessage(msg.chat.id, `تم حفظ اللقب بنجاح يا ${nick}`)
+       bot.sendMessage(msg.chat.id, `تم حفظ اللقب بنجاح يا ${nick} 😍`)
 
      })
         break;

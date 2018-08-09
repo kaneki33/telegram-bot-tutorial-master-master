@@ -45,9 +45,6 @@ switch (true) {
           })
         }
         break
-        case msg.text.startsWith('Edit'):
-        bot.sendMessage(msg.chat.id, 'works')
-        break
     default:
         break
 }

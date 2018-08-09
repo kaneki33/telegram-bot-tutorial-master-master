@@ -3,6 +3,13 @@ const admin   = require('./admin')
 module.exports = (bot, msg) => {
   const id = msg.from.id
     switch (true) {
+      case msg.text == 'معلوماتي':
+         {
+          bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)
+
+        };
+        break;
+        
         case msg.text == '/start':
         User.findOne({id}).then((user) => {
           if (!user) {
@@ -12,7 +19,7 @@ module.exports = (bot, msg) => {
 لقبي فلان
       `)
           } else {
-            bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`).then((msg) => {})
+            bot.sendMessage(msg.chat.id, `مرحبا بك  ${user.nickName}`).then((msg) => {})
           }
         }).catch((err) => {
           console.log(err)
@@ -47,12 +54,8 @@ User.findOne({id}).then((user) => {
         break;
         case (msg.from.id == '280942102' || msg.from.id == '383063938'):
         admin(bot, msg)
-        break;
-        case msg.text == 'معلوماتي':
-         {
-          bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)
-
-        };
+        break
+        
         /*
         bot.onText(/خالة قولي (.+)/, (msg, match) => {
           const chatId = msg.chat.id;
@@ -61,7 +64,7 @@ User.findOne({id}).then((user) => {
           bot.sendMessage(chatId, resp);
         });
         */
-       break;
+       
         default:
             break;
     }

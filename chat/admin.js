@@ -25,7 +25,7 @@ switch (true) {
         break
         case msg.text.startsWith('del'):
         try {
-          const matches = msg.text.match(/del(\s+)(.+)(\s+)/)
+          const matches = msg.text.match(/del(\s+)(.+)/)
           const rep = matches[2]
           Reply.findOneAndRemove({rep}).then((success) => {
             if (success) {

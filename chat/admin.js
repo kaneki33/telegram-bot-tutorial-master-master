@@ -24,9 +24,15 @@ switch (true) {
           })
         }
         break
+<<<<<<< HEAD
         case text.startsWith('Del'):
         try {
           const matches = text.match(/Del(\s+)(.+)/)
+=======
+        case msg.text.startsWith('Del'):
+        try {
+          const matches = msg.text.match(/Del(\s+)(.+)/)
+>>>>>>> Edit func
           const ask = matches[2]
           Reply.findOneAndRemove({ask}).then((success) => {
             if (success) {
@@ -46,6 +52,7 @@ switch (true) {
           })
         }
         break
+<<<<<<< HEAD
          case text.startsWith('Edit'):
          try {
           const matches = text.match(/Edit(\s+)(.+)(\s+)-(\s+)(.+)/)
@@ -55,11 +62,32 @@ switch (true) {
             bot.sendMessage(msg.chat.id, 'تم تحديث الرد بنجاح')
             })
             }else {
+=======
+        case msg.text.startsWith('Edit'):
+        try {
+          const matches = msg.text.match(/Edit(\s+)(.+)(\s+)-(\s+)(.+)/)
+          Reply.findOne({
+            ask: matches[2]
+          }).then((reply) => {
+            if(reply) {
+            Reply.findOneAndUpdate({
+              ask: reply.ask
+            }, {
+              $set: {
+                rep: matches[5]
+              }}).then(() => {
+             bot.sendMessage(msg.chat.id, 'تم تحديث الرد بنجاح')
+            })
+            }
+            else 
+            {
+>>>>>>> Edit func
             bot.sendMessage(msg.chat.id, 'لم يتم العثور على الرد')
             }
             })
         } catch (e) {
           const error = `
+<<<<<<< HEAD
         الرجاء كتابة الامر بالصيغة الصحيحة
         مثال:
         Edit الكلمة - الرد
@@ -86,6 +114,11 @@ switch (true) {
       الرجاء كتابة الامر بالصيغة الصحيحة
       مثال:
       del الرد المراد حذفه
+=======
+      الرجاء كتابة الامر بالصيغة الصحيحة
+      مثال:
+      Edit الكلمة - الرد
+>>>>>>> Edit func
               `
           bot.sendMessage(msg.chat.id, error, {
             reply_to_message_id: msg.message_id

@@ -5,7 +5,7 @@ switch (true) {
     case text == 'معلوماتي' :
     bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)
     break
-    case text.startsWith('خالة قولي'):
+    case text.startsWith('حجة قولي'):
     const match = text.match(/حجة قولي (.+)/)
     bot.sendMessage(msg.chat.id,  match[1])
     break

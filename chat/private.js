@@ -1,5 +1,4 @@
 const User     = require('../modules/user')
-const admin    = require('./admin')
 module.exports = async (bot, msg) => {
 const id = msg.from.id
 
@@ -34,7 +33,7 @@ switch (true) {
                 })
     }
   break
-    
+
     default:
     break
     }

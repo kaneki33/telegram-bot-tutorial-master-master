@@ -6,7 +6,7 @@ module.exports = (bot, msg) => {
         const id = msg.from.id
         User.findOne({id}).then((user) => {
           if (!user) {
-            bot.sendMessage(msg.chat.id, `مرحبا
+            bot.sendMessage(msg.chat.id, `مرحبا 😊
 رجاءا ارسل لي لقبك
 مثال:
 لقبي فلان

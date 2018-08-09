@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   res.json({ version: packageInfo.version });
 });
 
-const server = app.listen(process.env.PORT, "127.0.0.1", () => {
+const server = app.listen(process.env.PORT, "0.0.0.0", () => {
   const host = server.address().address;
   const port = server.address().port;
   console.log('Web server started at http://%s:%s', host, port);

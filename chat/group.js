@@ -10,7 +10,7 @@ module.exports = async (bot, msg) => {
                 reply_to_message_id: msg.message_id
               })            }
                  
-           else if(reply.ask == "مين انا يا حجة؟" && msg.from.id == "383063938") 
+            if(reply.ask == "مين انا يا حجة؟" && msg.from.id == "383063938") 
               {
                   bot.sendMessage(msg.chat.id, `انت ${user.nickName} .. وكمان عزووووز الطيب 😍😍`), {
                       reply_to_message_id: msg.message_id

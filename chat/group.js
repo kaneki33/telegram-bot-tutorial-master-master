@@ -35,6 +35,12 @@ module.exports = async (bot, msg) => {
                           reply_to_message_id: msg.message_id
                         } 
                       }
+                      else if(reply.ask == "مين انا يا حجة؟" && msg.from.id == "280942102") 
+                  {
+                      bot.sendMessage(msg.chat.id, `انت ${msg.from.first_name} .. The greatest programer ever 😍😍`), {
+                          reply_to_message_id: msg.message_id
+                        } 
+                      }
             else {
                 bot.sendMessage(msg.chat.id, reply.rep)
 

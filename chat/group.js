@@ -12,7 +12,7 @@ module.exports = async (bot, msg) => {
                       }   
  /* kaneki*/    else  if(reply.ask == "حجة مين انا" && msg.from.id == "383063938") 
               {
-                  bot.sendMessage(msg.chat.id, `انت ${user.nickName} .. وكمان عزووووز الطيب 😍😍`), {
+                  bot.sendMessage(msg.chat.id, `انت ${user.nickName} .. وكمان عزوووز مخترعي  😍😍`), {
                       reply_to_message_id: msg.message_id
                     } 
                       } 

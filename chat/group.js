@@ -42,7 +42,7 @@ module.exports = async (bot, msg) => {
                       }
  /*Lee*/        else if(reply.ask == "حجة مين انا" && msg.from.id == "236655199") 
                   {
-                    bot.sendMessage(msg.chat.id, `انت ${msg.from.first_name} .. The odd individual 😍😍`), {
+                    bot.sendMessage(msg.chat.id, `You are ${msg.from.first_name} .. or Welde Senbet 😍😍`), {
                         reply_to_message_id: msg.message_id
                       } 
                       }

@@ -5,53 +5,52 @@ module.exports = async (bot, msg) => {
     const user = await User.findOne({id}).catch(err => false)
     const reply = await Reply.findOne({ ask: msg.text })
     if(reply) {
-        if(reply.ask == "حجة" && msg.from.id == "383063938") 
 
-            bot.sendMessage(msg.chat.id,`عيون الحجة 😍 `, {
-                reply_to_message_id: msg.message_id
-              })            
-                 
- /* kaneki*/         else  if(reply.ask == "حجة مين انا" && msg.from.id == "383063938") 
+                if(reply.ask == "حجة" && msg.from.id == "383063938") 
+        {
+            bot.sendMessage(msg.chat.id,`عيون الحجة 😍 `, { reply_to_message_id: msg.message_id})            
+                      }   
+ /* kaneki*/    else  if(reply.ask == "حجة مين انا" && msg.from.id == "383063938") 
               {
                   bot.sendMessage(msg.chat.id, `انت ${user.nickName} .. وكمان عزووووز الطيب 😍😍`), {
                       reply_to_message_id: msg.message_id
                     } 
-                  } 
- /*8asira*/                else if(reply.ask == "حجة مين انا" && msg.from.id == "481164937") 
+                      } 
+ /*8asira*/     else if(reply.ask == "حجة مين انا" && msg.from.id == "481164937") 
               {
                   bot.sendMessage(msg.chat.id, `انت ${msg.from.first_name} .. وكمان القصيرة بس ام الكل 😍😍`), {
                       reply_to_message_id: msg.message_id
                     } 
-                  }
- /*5al*/                 else if(reply.ask == "حجة مين انا" && msg.from.id == "614264651") 
+                      }
+ /*5al*/        else if(reply.ask == "حجة مين انا" && msg.from.id == "614264651") 
                   {
                       bot.sendMessage(msg.chat.id, `انت ${msg.from.first_name} .. وكمان الفلفل اسود حق الحارة 😍😍`), {
                           reply_to_message_id: msg.message_id
                         } 
                       }
-  /*6ar8*/                    else if(reply.ask == "حجة مين انا" && msg.from.id == "450493590") 
+  /*6ar8*/      else if(reply.ask == "حجة مين انا" && msg.from.id == "450493590") 
                   {
                       bot.sendMessage(msg.chat.id, `انت ${msg.from.first_name} .. طارق ملك المحبس 😍😍`), {
                           reply_to_message_id: msg.message_id
                         } 
                       }
-   /*shakir*/                   else if(reply.ask == "حجة مين انا" && msg.from.id == "280942102") 
+   /*shakir*/   else if(reply.ask == "حجة مين انا" && msg.from.id == "280942102") 
                   {
                       bot.sendMessage(msg.chat.id, `انت ${msg.from.first_name} .. The greatest programer ever 😍😍`), {
                           reply_to_message_id: msg.message_id
                         } 
                       }
- /*Lee*/                   else if(reply.ask == "حجة مين انا" && msg.from.id == "383063938") 
+ /*Lee*/        else if(reply.ask == "حجة مين انا" && msg.from.id == "383063938") 
                   {
                     bot.sendMessage(msg.chat.id, `انت ${msg.from.first_name} .. The odd individual 😍😍`), {
                         reply_to_message_id: msg.message_id
                       } 
-                    }
-            else {
+                      }
+                else {
                 bot.sendMessage(msg.chat.id, reply.rep)
 
             
-            } 
-    }
+                      } 
+                }
     
         }

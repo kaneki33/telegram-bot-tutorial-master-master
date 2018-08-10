@@ -2,6 +2,7 @@ const Reply = require('../modules/reply')
 const User  = require('../modules/user')
 module.exports = async (bot, msg) => {
     const id = msg.from.id
+    const user = await User.findOne({id}).catch(err => false)
     const reply = await Reply.findOne({ ask: msg.text })
     if(reply) {
         if(reply.ask == "حجة" && msg.from.id == "383063938") 

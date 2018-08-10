@@ -35,10 +35,10 @@ module.exports = async (bot, msg) => {
                 reply_to_message_id: msg.message_id
               } 
             }
-            
-        else {
-              bot.sendMessage(msg.chat.id, `والله اني ذلحين ناااسي`), {
+            else if(reply.ask == "مين انا يا حجة؟" && msg.from.id == "450493590") 
+        {
+            bot.sendMessage(msg.chat.id, `انت ${msg.from.first_name} .. طارق ملك المحبس 😍😍`), {
                 reply_to_message_id: msg.message_id
               } 
+            }
         }
-}

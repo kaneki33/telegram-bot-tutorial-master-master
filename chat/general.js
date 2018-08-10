@@ -7,7 +7,7 @@ switch (true) {
     break
     case text.startsWith('حجة قولي'):
     const match = text.match(/حجة قولي (.+)/)
-    bot.sendMessage(msg.chat.id,  match[1])
+    bot.sendMessage(msg.chat.id,  match[2])
     break
     case (msg.from.id == '280942102' || msg.from.id == '383063938'):
         admin(bot, msg)

@@ -6,7 +6,7 @@ switch (true) {
   case msg.text == '/start':
    const user = await User.findOne({id}).catch(err => false)
    if (!user) {
-    bot.sendMessage(msg.chat.id, `مرحبا \nرجاءا ارسل لي لقبك\nمثال:\nلقبي فلان`)
+    bot.sendMessage(msg.chat.id, `مرحبا 😍\nرجاءا ارسل لي لقبك\nمثال:\nلقبي فلان`)
    } else {
        bot.sendMessage(msg.chat.id, `مرحبا يا ${user.nickName}`)
    }
@@ -19,7 +19,7 @@ switch (true) {
       id: msg.from.id,
       nickName:  nick
       }
-    const fUser = User.findOne({id})
+    const fUser = await User.findOne({id}).catch(err => false)
     if (fUser) {
       User.findOneAndUpdate({id}, newUser).then(() => {
       bot.sendMessage(msg.chat.id, `تم تحديث اللقب بنجاح يا ${nick} 😍`)

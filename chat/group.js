@@ -1,18 +1,19 @@
 const Reply = require('../models/reply')
 const User  = require('../models/user')
 const fs    = require('fs')
-/* let obj
-fs.readFile('../static/friends.json', 'utf8', (error, data) => {
+const path  = require('path')
+let obj
+fs.readFile(path.resolve(__dirname, '../static/friends.json'), 'utf8', (err, data) => {
 if(err) throw err
 obj = JSON.parse(data)
-}) */
+})
 module.exports = async (bot, msg) => {
-// for testing
-// if (msg.text == 'testing') {
-// 	for(let user of obj) {
-// 	bot.sendMessage(msg.chat.id, user.name)
-// 	}
-// }
+//for testing
+if (msg.text == 'testing') {
+	for(let user of obj) {
+	bot.sendMessage(msg.chat.id, user.name)
+	}
+}
 //end testing
     const id = msg.from.id
     const user = await User.findOne({id}).catch(err => false)

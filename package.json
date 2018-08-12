@@ -5,7 +5,8 @@
   "description": "awesome telegram bot",
   "repository": "https://github.com/kaneki33/telegram-bot-tutorial-master-master.git",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "author": "abdo",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "lyric-get": "^1.0.3",
     "mongoose": "^5.2.7",
     "node-telegram-bot-api": "^0.21.1",
+    "nodemon": "^1.18.3",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
   }

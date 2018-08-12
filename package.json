@@ -2,6 +2,8 @@
   "name": "abdo-bot",
   "version": "1.0.0",
   "main": "index.js",
+  "description": "awesome telegram bot",
+  "repository": "https://github.com/kaneki33/telegram-bot-tutorial-master-master.git",
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -9,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "chalk": "^2.4.1",
     "dotenv": "^4.0.0",
     "express": "^4.13.4",
     "lyric-get": "^1.0.3",

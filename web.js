@@ -1,12 +1,11 @@
-const express = require('express');
-const packageInfo = require('./package.json');
-const bodyParser = require('body-parser');
-
-const app = express();
-app.use(bodyParser.json());
+const express     = require('express')
+const packageInfo = require('./package.json')
+const bodyParser  = require('body-parser')
+const app = express()
+app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-  res.json({ version: packageInfo.version });
+  res.json({ version: packageInfo.version })
 });
 
 const server = app.listen(process.env.PORT, ((process.env.NODE_ENV == "development") ? "127.0.0.1" : "0.0.0.0") , () => {

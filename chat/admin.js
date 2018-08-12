@@ -1,4 +1,4 @@
-const Reply = require('../modules/reply')
+const Reply = require('../models/reply')
 module.exports = (bot, msg) => {
   const text = String(msg.text) || ""
 switch (true) {

@@ -1,5 +1,5 @@
-const Reply = require('../modules/reply')
-const User  = require('../modules/user')
+const Reply = require('../models/reply')
+const User  = require('../models/user')
 const fs    = require('fs')
 /* let obj
 fs.readFile('../static/friends.json', 'utf8', (error, data) => {

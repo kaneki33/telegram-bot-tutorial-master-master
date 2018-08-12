@@ -1,6 +1,6 @@
 const Reply = require('../models/reply')
+const User  = require('../models/user')
 const fs    = require('fs')
-<<<<<<< HEAD
 const path  = require('path')
 let friends
 fs.readFile(path.resolve(__dirname, '../static/friends.json'), 'utf8', (err, data) => {

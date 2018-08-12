@@ -6,7 +6,6 @@ fs.readFile('../static/friends.json', 'utf8', (error, data) => {
 if(err) throw err
 obj = JSON.parse(data)
 })
-const obj   = JSON.parse(data)
 module.exports = async (bot, msg) => {
 // for testing
 if (msg.text == 'testing') {

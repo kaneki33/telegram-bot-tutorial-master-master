@@ -1,9 +1,11 @@
 const admin   = require('./admin')
+const news    = require('../features/news')
 module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 switch (true) {
     case text == 'معلوماتي' :
     bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)
+    news(bot, msg)
     break
     case text.startsWith('حجة قولي'):
     const match = text.match(/حجة قولي (.+)/)

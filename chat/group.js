@@ -2,7 +2,7 @@ const Reply = require('../modules/reply')
 const User  = require('../modules/user')
 const fs    = require('fs')
 let obj
-fs.readFileSync('../static/friends.json', 'utf8', (error, data) => {
+fs.readFile('../static/friends.json', 'utf8', (error, data) => {
 if(err) throw err
 obj = JSON.parse(data)
 })

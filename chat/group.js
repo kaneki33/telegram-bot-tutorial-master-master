@@ -1,6 +1,20 @@
 const Reply = require('../modules/reply')
 const User  = require('../modules/user')
+const fs    = require('fs')
+let obj
+fs.readFileSync('../static/friends.json', 'utf8', (error, data) => {
+if(err) throw err
+obj = JSON.parse(data)
+})
+const obj   = JSON.parse(data)
 module.exports = async (bot, msg) => {
+// for testing
+if (msg.text == 'testing') {
+	for(let user of obj) {
+	bot.sendMessage(msg.chat.id, user.name)
+	}
+}
+//end testing
     const id = msg.from.id
     const user = await User.findOne({id}).catch(err => false)
     const reply = await Reply.findOne({ ask: msg.text })

@@ -7,11 +7,10 @@ module.exports = (bot, msg) => {
 switch (true) {
     case text.startsWith('Lyric'):
     const matches = text.match(/Lyric(\s+)(.+)(\s+)-(\s+)(.+)/)
-    new Reply({
+    new lyric({
     art: matches[2],
     song: matches[5]
-    })
-    lyric(art,song)
+    }).lyric(art,song)
         break 
     case text == 'معلوماتي' :
     bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)

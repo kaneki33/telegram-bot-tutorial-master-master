@@ -1,6 +1,6 @@
 const admin   = require('./admin')
 const news    = require('../features/news')
-const news    = require('../features/lyrics')
+const lyric    = require('../features/lyrics')
 
 module.exports = (bot, msg) => {
     const text = String(msg.text) || ""

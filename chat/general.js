@@ -8,8 +8,13 @@ switch (true) {
     const matches = text.match(/Lyric(\s+)(.+)(\s+)-(\s+)(.+)/)
     lyric.get(matches[2],matches[5], (err, lyrics) => {
     let res 
-    if (err) res = 'لم يتم العثور على الكلمات';
+    if (err) {
+        res = 'لم يتم العثور على الكلمات';
+    }
+    else
+ {
     res = lyrics
+}
     bot.sendMessage(msg.chat.id, res)
     console.log(err)
     })

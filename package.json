@@ -11,6 +11,8 @@
   "author": "abdo",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "*",
+    "underscore": "*",
     "body-parser": "^1.15.0",
     "chalk": "^2.4.1",
     "dotenv": "^4.0.0",

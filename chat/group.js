@@ -8,13 +8,6 @@ if(err) throw err
 friends = JSON.parse(data)
 })
 module.exports = async (bot, msg) => {
-//for testing
-if (msg.text == 'testing') {
-	for(let friend of friends) {
-	bot.sendMessage(msg.chat.id, friend.name)
-	}
-}
-//end testing
     const id = msg.from.id
     let lock = true
     const reply = await Reply.findOne({ ask: msg.text })

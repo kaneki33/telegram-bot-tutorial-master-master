@@ -1,7 +1,9 @@
 const admin   = require('./admin')
 const news    = require('../features/news')
 const lyric    = require('../features/lyrics')
+var l = require("lyric-get");
 
+console.log(l.get("John Lennon", "Imagine"));
 module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 switch (true) {

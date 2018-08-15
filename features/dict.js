@@ -3,7 +3,7 @@ var parser = require("./parser.js");
 
 
 function getDef(word, options, callback) {
-    const lng = en;
+    const lng = "en";
 	if(typeof callback != "function") throw "word-definition error: no callback specified (getDef function).";
 	if(typeof options != "object") throw "word-definition error: options should be an object or null (getDef function).";
 

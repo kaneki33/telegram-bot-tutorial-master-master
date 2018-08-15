@@ -23,11 +23,10 @@ switch (true) {
         break 
     case text.startsWith('Difine'):
     const matche = text.match(/Difine(\s+)(.+)/)
-    getDef(matche[2], (err, getDef) => {
+    dict.getDef(matche[2], null, function(getDef){
     
     bot.sendMessage(msg.chat.id, getDef)
-    console.log(err)
-    })
+    });
         break 
     case text == 'اخبار' :
     news(bot, msg)

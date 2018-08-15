@@ -11,10 +11,9 @@
   "author": "abdo",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "*",
-    "underscore": "*",
     "body-parser": "^1.15.0",
     "chalk": "^2.4.1",
+    "cheerio": "*",
     "dotenv": "^4.0.0",
     "express": "^4.13.4",
     "lyric-get": "^1.0.3",
@@ -22,6 +21,9 @@
     "node-telegram-bot-api": "^0.21.1",
     "nodemon": "^1.18.3",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "underscore": "*",
+    "word-definition": "^2.1.6",
+    "wordnet": "^0.1.2"
   }
 }

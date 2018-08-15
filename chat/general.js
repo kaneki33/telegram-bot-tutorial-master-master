@@ -1,6 +1,8 @@
 const admin   = require('./admin')
 const news    = require('../features/news')
 const lyric    = require('../features/lyrics')
+const dict    = require('../features/dict')
+
 module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 switch (true) {
@@ -16,6 +18,14 @@ switch (true) {
     res = lyrics
 }
     bot.sendMessage(msg.chat.id, res)
+    console.log(err)
+    })
+        break 
+    case text.startsWith('Difine'):
+    const matches = text.match(/Difine(\s+)(.+)/)
+    dict.get(matches[2], (err, getDef) => {
+    
+    bot.sendMessage(msg.chat.id, getDef)
     console.log(err)
     })
         break 

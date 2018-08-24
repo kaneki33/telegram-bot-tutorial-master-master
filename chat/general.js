@@ -28,7 +28,7 @@ switch (true) {
     bot.sendMessage(msg.chat.id, getDef)
     });
         break 
-    case text == 'اخبار' :
+    case text == 'حجة اخبار' :
     news(bot, msg)
     break
     case text == 'معلوماتي' :

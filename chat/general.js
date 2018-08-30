@@ -6,6 +6,8 @@ const dict    = require('../features/dict')
 module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 switch (true) {
+    case text.startsWith('tube'):
+    
     case text.startsWith('Lyric'):
     const matches = text.match(/Lyric(\s+)(.+)(\s+)-(\s+)(.+)/)
     lyric.get(matches[2],matches[5], (err, lyrics) => {

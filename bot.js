@@ -15,6 +15,7 @@ bot = new Bot(token, {
 }
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
+bot.sendMessage(383063938,"The bot is online")
 
 bot.on('message', (msg) => {
  general(bot, msg)

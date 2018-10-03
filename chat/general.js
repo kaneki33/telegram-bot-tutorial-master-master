@@ -9,7 +9,7 @@ module.exports = (bot, msg) => {
 switch (true) {  
     case text.startsWith('/ud'):
     const matche = text.match(/ud(\s+)(.+)/)
-var definition = matce[2]
+var definition = (matce[2])
 var id = 217456
 
 // defid callback example.

@@ -8,7 +8,7 @@ module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 switch (true) {  
     case text.startsWith('/ud'):
-    const matche = text.match(/ud(\s+)(.+)/)
+    const matce = text.match(/ud(\s+)(.+)/)
 var definition = (matce[2])
 var id = 217456
 

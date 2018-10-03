@@ -8,7 +8,8 @@ module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 switch (true) {  
     case text.startsWith('/ud'):
-var definition = 'car'
+    const matche = text.match(/ud(\s+)(.+)/)
+var definition = matce[2]
 var id = 217456
 
 // defid callback example.
@@ -16,17 +17,17 @@ ud.defid(id, (error, entry) => {
   if (error) {
     console.error(error.message)
   } else {
-    bot.sendMessage(msg.chat.id,entry.word , '1')
-    bot.sendMessage(msg.chat.id,entry.definition , ' 2')
-    bot.sendMessage(msg.chat.id,entry.example , '3')
+    console.log(entry.word , '1')
+    console.log(entry.definition , ' 2')
+    console.log(entry.example , '3')
   }
 })
 // defid promise example.
 ud.defid(id).then((result) => {
-  bot.sendMessage(msg.chat.id,result.word , '4' )
-  bot.sendMessage(msg.chat.id,result.definition , '5')
-  bot.sendMessage(msg.chat.id,result.example , '6')
-  bot.sendMessage(msg.chat.id, entry.word , '7')
+  console.log(result.word , '4' )
+  console.log(result.definition , '5')
+  console.log(result.example , '6')
+  console.log( entry.word , '7')
 }).catch((error) => {
   console.error(error.message)
 })
@@ -36,20 +37,20 @@ ud.random((error, entry) => {
   if (error) {
     console.error(error.message)
   } else {
-    bot.sendMessage(msg.chat.id,entry.word , '8')
-    bot.sendMessage(msg.chat.id,entry.definition , '9')
-    bot.sendMessage(msg.chat.id,entry.example , '10')
-    bot.sendMessage(msg.chat.id, 'random call')
+    console.log(entry.word , '8')
+    console.log(entry.definition , '9')
+    console.log(entry.example , '10')
+    console.log( 'random call')
 
   }
 })
 
 // random promise example.
 ud.random().then((result) => {
-  bot.sendMessage(msg.chat.id,result.word , '11')
-  bot.sendMessage(msg.chat.id,result.definition , '12')
-  bot.sendMessage(msg.chat.id,result.example , '13')
-  bot.sendMessage(msg.chat.id, 'ran pro')
+  console.log(result.word , '11')
+  console.log(result.definition , '12')
+  console.log(result.example , '13')
+  console.log( 'ran pro')
 
 }).catch((error) => {
   console.error(error.message)
@@ -60,10 +61,10 @@ ud.term(definition, (error, entries, tags, sounds) => {
   if (error) {
     console.error(error.message)
   } else {
-    bot.sendMessage(msg.chat.id,entries[0].word , '14')
-    bot.sendMessage(msg.chat.id,entries[0].definition , '15')
-    bot.sendMessage(msg.chat.id,entries[0].example , '16')
-    bot.sendMessage(msg.chat.id, 'term call')
+    bot.sendMessage(msg.chat.id,entries[0].word )
+    bot.sendMessage(msg.chat.id,entries[0].definition )
+    bot.sendMessage(msg.chat.id,entries[0].example )
+    console.log( 'term call')
 
   }
 })
@@ -71,20 +72,14 @@ ud.term(definition, (error, entries, tags, sounds) => {
 // term promise example.
 ud.term(definition).then((result) => {
   const entries = result.entries
-  bot.sendMessage(msg.chat.id,entries[0].word , '17')
-  bot.sendMessage(msg.chat.id,entries[0].definition , '18')
-  bot.sendMessage(msg.chat.id,entries[0].example , '19')
-  bot.sendMessage(msg.chat.id, 'term pro')
+  console.log(entries[0].word , '17')
+  console.log(entries[0].definition , '18')
+  console.log(entries[0].example , '19')
+  console.log( 'term pro')
 
 }).catch((error) => {
   console.error(error.message)
 })
-
-    
-
-
-
-
         break 
     case text.startsWith('Lyric'):
     const matches = text.match(/Lyric(\s+)(.+)(\s+)-(\s+)(.+)/)

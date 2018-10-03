@@ -23,6 +23,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "underscore": "*",
+    "urban-dictionary": "^2.2.1",
     "word-definition": "^2.1.6",
     "wordnet": "^0.1.2"
   }

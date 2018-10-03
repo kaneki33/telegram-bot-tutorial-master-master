@@ -16,17 +16,17 @@ ud.defid(id, (error, entry) => {
   if (error) {
     console.error(error.message)
   } else {
-    bot.sendMessage(msg.chat.id,entry.word)
-    bot.sendMessage(msg.chat.id,entry.definition)
-    bot.sendMessage(msg.chat.id,entry.example)
+    bot.sendMessage(msg.chat.id,entry.word + '1')
+    bot.sendMessage(msg.chat.id,entry.definition + ' 2')
+    bot.sendMessage(msg.chat.id,entry.example + '3')
   }
 })
 // defid promise example.
 ud.defid(id).then((result) => {
-  bot.sendMessage(msg.chat.id,result.word)
-  bot.sendMessage(msg.chat.id,result.definition)
-  bot.sendMessage(msg.chat.id,result.example)
-  bot.sendMessage(msg.chat.id, 'defid pro')
+  bot.sendMessage(msg.chat.id,result.word + '4' )
+  bot.sendMessage(msg.chat.id,result.definition + '5')
+  bot.sendMessage(msg.chat.id,result.example + '6')
+  bot.sendMessage(msg.chat.id, entry.word + '7')
 }).catch((error) => {
   console.error(error.message)
 })
@@ -36,9 +36,9 @@ ud.random((error, entry) => {
   if (error) {
     console.error(error.message)
   } else {
-    bot.sendMessage(msg.chat.id,entry.word)
-    bot.sendMessage(msg.chat.id,entry.definition)
-    bot.sendMessage(msg.chat.id,entry.example)
+    bot.sendMessage(msg.chat.id,entry.word + '8')
+    bot.sendMessage(msg.chat.id,entry.definition + '9')
+    bot.sendMessage(msg.chat.id,entry.example + '10')
     bot.sendMessage(msg.chat.id, 'random call')
 
   }
@@ -46,9 +46,9 @@ ud.random((error, entry) => {
 
 // random promise example.
 ud.random().then((result) => {
-  bot.sendMessage(msg.chat.id,result.word)
-  bot.sendMessage(msg.chat.id,result.definition)
-  bot.sendMessage(msg.chat.id,result.example)
+  bot.sendMessage(msg.chat.id,result.word + '11')
+  bot.sendMessage(msg.chat.id,result.definition + '12')
+  bot.sendMessage(msg.chat.id,result.example + '13')
   bot.sendMessage(msg.chat.id, 'ran pro')
 
 }).catch((error) => {
@@ -60,9 +60,9 @@ ud.term(definition, (error, entries, tags, sounds) => {
   if (error) {
     console.error(error.message)
   } else {
-    bot.sendMessage(msg.chat.id,entries[0].word)
-    bot.sendMessage(msg.chat.id,entries[0].definition)
-    bot.sendMessage(msg.chat.id,entries[0].example)
+    bot.sendMessage(msg.chat.id,entries[0].word + '14')
+    bot.sendMessage(msg.chat.id,entries[0].definition + '15')
+    bot.sendMessage(msg.chat.id,entries[0].example + '16')
     bot.sendMessage(msg.chat.id, 'term call')
 
   }
@@ -71,9 +71,9 @@ ud.term(definition, (error, entries, tags, sounds) => {
 // term promise example.
 ud.term(definition).then((result) => {
   const entries = result.entries
-  bot.sendMessage(msg.chat.id,entries[0].word)
-  bot.sendMessage(msg.chat.id,entries[0].definition)
-  bot.sendMessage(msg.chat.id,entries[0].example)
+  bot.sendMessage(msg.chat.id,entries[0].word + '17')
+  bot.sendMessage(msg.chat.id,entries[0].definition + '18')
+  bot.sendMessage(msg.chat.id,entries[0].example + '19')
   bot.sendMessage(msg.chat.id, 'term pro')
 
 }).catch((error) => {

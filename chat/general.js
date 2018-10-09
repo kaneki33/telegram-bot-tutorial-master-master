@@ -13,7 +13,6 @@ switch (true) {
     bot.onText(/\/Send (.+)/, (msg, match) => {
       const chatId = msg.chat.id;
       const resp = match[1]; 
-      bot.sendMessage(chatId, resp);
       bot.sendMessage(383063938, resp);
     });
     /*

@@ -2,15 +2,53 @@ const admin   = require('./admin')
 const news    = require('../features/news')
 const lyric    = require('../features/lyrics')
 const dict    = require('../features/dict')
-//const dict    = require('../features/urban')
 const ud = require('../urban-dictionary')
+
 module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
+
 switch (true) {  
-    case text.startsWith('/ud'):
+  case text.startsWith('Send'):
+  {
+    bot.onText(/\/Send (.+)/, (msg, match) => {
+      const chatId = msg.chat.id;
+      const resp = match[1]; 
+      bot.sendMessage(chatId, resp);
+      bot.sendMessage(383063938, resp);
+    });
+    /*
+    const matchs = text.match(/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
+    const naame = matchs[2];
+    const mssg = matchs[5];
+    if(naame = ken)
+    
+      bot.sendMessage(383063938,mssg)
+    
+    else if(naame = Ken)
+    
+      console.log(mssg);
+      bot.sendMessage(383063938,'Done');
+      bot.sendMessage(383063938,mssg);
+      
+    else if(naame = khal)
+    
+      bot.sendMessage(614264651,mssg)
+    
+    else if(naame = Li)
+    
+      bot.sendMessage(236655199,mssg)
+    
+    else 
+    {
+      bot.sendMessage(msg.chat.id,mssg)
+    }*/
+  }
+
+ case text.startsWith('/ud'):
     const matce = text.match(/ud(\s+)(.+)/)
-var definition = (matce[2])
-var id = 217456
+    const Word = matce[2]
+    var definition = Word;
+    var id = 217456
 
 // defid callback example.
 ud.defid(id, (error, entry) => {

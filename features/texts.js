@@ -1,20 +1,21 @@
 module.exports = {
-    get: function(naame, mssg) {
+    get: function(naame) {
+      let per
             if(naame = ken)
             
-              bot.sendMessage(383063938,mssg)
+              per = 383063938
             
             else if(naame = hayat)
         
-              bot.sendMessage(481164937,mssg);
+              per = 481164937
               
             else if(naame = khal)
             
-              bot.sendMessage(614264651,mssg)
+             per = 614264651
             
             else if(naame = Li)
             
-              bot.sendMessage(236655199,mssg)
+             per = 236655199
             
             else 
             {

@@ -3,22 +3,11 @@ const news    = require('../features/news')
 const lyric    = require('../features/lyrics')
 const dict    = require('../features/dict')
 const ud = require('../urban-dictionary')
-const text = require('../texts')
+const tex = require('../features/texts')
 module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 
 switch (true) {  
-  /*case text.startsWith('Send'):
-  {
-    bot.onText(/\/Send (.+)/, (msg, match) => {
-      const chatId = msg.chat.id;
-      const resp = match[1]; 
-      bot.sendMessage(chatId, resp);
-      //bot.sendMessage(383063938, resp);
-    });
-    /*
-    */
-  
 
  case text.startsWith('/ud'):
  {
@@ -114,7 +103,10 @@ ud.term(definition).then((result) => {
         break 
     case text.startsWith('Send'):
     const mats = text.match(/\/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
-    text.get(mats[2],mats[5])
+    tex.get(mats[2])
+      const mssg = mats[5];
+      bot.sendMessage(per , mssg)
+    
     break
     case text.startsWith('Difine'):
     const matche = text.match(/Difine(\s+)(.+)/)

@@ -102,8 +102,10 @@ ud.term(definition).then((result) => {
     })
         break 
     case text.startsWith('Send'):
-    const mats = text.match(/\/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
-    tex.get(matchess[2],matchess[5])
+    const matchess = text.match(/\/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
+    tex.get(matchess[2])
+   const txx = tx
+    bot.sendMessage(txx, matchess[5])
     break
 
     case text.startsWith('Difine'):

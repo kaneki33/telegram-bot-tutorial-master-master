@@ -1,24 +1,22 @@
 module.exports = {
-    get: function(naame, mssg) {
+    get: function(naame) {
+      var tx = "";
             if(naame = ken)
-            
-              bot.sendMessage(383063938,mssg)
-            
-            else if(naame = hayat)
-        
-              bot.sendMessage(481164937,mssg);
+            tx = 383063938
               
+            else if(naame = hayat)
+            tx = 481164937
+          
             else if(naame = khal)
-            
-              bot.sendMessage(614264651,mssg)
+            tx = 614264651
             
             else if(naame = Li)
-            
-              bot.sendMessage(236655199,mssg)
-            
+            tx = 236655199
+
             else 
             {
-              bot.sendMessage(msg.chat.id,mssg)
+              tx = msg.chat.id
+              
             }
           }
         }

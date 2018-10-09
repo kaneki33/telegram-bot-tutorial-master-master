@@ -12,8 +12,8 @@ switch (true) {
    }
   break
   case text == 'معلوماتي' :
-    const user = await User.findOne({id}).catch(err => false)
-    if (!user) {
+    const usere = await User.findOne({id}).catch(err => false)
+    if (!usere) {
       bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}\n\nNick Name : No Nick Name`)
       bot.sendMessage(msg.chat.id, `مرحبا 😍\nرجاءا ارسل لي لقبك\nمثال:\nلقبي فلان`)
     } else {

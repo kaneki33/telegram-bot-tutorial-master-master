@@ -11,15 +11,6 @@ switch (true) {
        bot.sendMessage(msg.chat.id, `مرحبا يا ${user.nickName}`)
    }
   break
-  case text == 'معلوماتي' :
-    const usere = await User.findOne({id}).catch(err => false)
-    if (!usere) {
-      bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}\n\nNick Name : No Nick Name`)
-      bot.sendMessage(msg.chat.id, `مرحبا 😍\nرجاءا ارسل لي لقبك\nمثال:\nلقبي فلان`)
-    } else {
-      bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}\n\nNick Name : ${user.nickName}`)
-    }
-    break
   case msg.text.startsWith('لقبي'):
     let message = msg.text.split(" ")
         message.splice(0 , 1)

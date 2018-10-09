@@ -4,9 +4,9 @@ module.exports = {
             
               bot.sendMessage(383063938,mssg)
             
-            else if(naame = Ken)
+            else if(naame = hayat)
         
-              bot.sendMessage(383063938,mssg);
+              bot.sendMessage(481164937,mssg);
               
             else if(naame = khal)
             

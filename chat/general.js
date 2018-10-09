@@ -4,9 +4,7 @@ const lyric    = require('../features/lyrics')
 const dict    = require('../features/dict')
 const ud = require('../urban-dictionary')
 const tex = require('../features/texts')
-const User = require('../models/user')
-
-module.exports = async (bot, msg) => {
+module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 
 switch (true) {  
@@ -121,13 +119,7 @@ ud.term(definition).then((result) => {
     news(bot, msg)
     break
     case text == 'معلوماتي' :
-    const user = await User.findOne({id}).catch(err => false)
-    if (user) {
-      bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}\n\nNick Name : No Nick Name`)
-      bot.sendMessage(msg.chat.id, `مرحبا 😍\nرجاءا ارسل لي لقبك\nمثال:\nلقبي فلان`)
-    } else {
-      bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}\n\nNick Name : ${user.nickName}`)
-    }
+    bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)
     break
     case text.startsWith('حجة قولي'):
     const match = text.match(/حجة قولي (.+)/)

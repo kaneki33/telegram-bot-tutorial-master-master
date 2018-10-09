@@ -21,6 +21,7 @@ switch (true) {
   
 
  case text.startsWith('/ud'):
+ {
     const matce = text.match(/ud(\s+)(.+)/)
     const Word = matce[2]
     var definition = Word;
@@ -95,6 +96,7 @@ ud.term(definition).then((result) => {
   console.error(error.message)
 })
         break 
+}
     case text.startsWith('Lyric'):
     const matches = text.match(/Lyric(\s+)(.+)(\s+)-(\s+)(.+)/)
     lyric.get(matches[2],matches[5], (err, lyrics) => {

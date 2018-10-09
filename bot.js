@@ -16,12 +16,28 @@ bot = new Bot(token, {
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
 bot.sendMessage(383063938,"The bot is online")
-bot.onText(/\/Send (.+)/, (msg, matcch) => {
-  const chatId = msg.chat.id;
-  const resp = matcch[1]; 
-  bot.sendMessage(chatId, resp);
-  bot.sendMessage(383063938, resp);
-});
+const matchs = text.match(/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
+    const naame = matchs[2];
+    const mssg = matchs[5];
+    if(naame = ken)
+    
+      bot.sendMessage(383063938,mssg)
+    
+    else if(naame = Ken)
+      bot.sendMessage(383063938,mssg)
+      
+    else if(naame = khal)
+    
+      bot.sendMessage(614264651,mssg)
+    
+    else if(naame = Li)
+    
+      bot.sendMessage(236655199,mssg)
+    
+    else 
+    {
+      bot.sendMessage(msg.chat.id,mssg)
+    }
 bot.on('message', (msg) => {
  general(bot, msg)
   switch (true) {

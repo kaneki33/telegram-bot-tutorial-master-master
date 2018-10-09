@@ -8,7 +8,7 @@ module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 
 switch (true) {  
-  case text.startsWith('Send'):
+  /*case text.startsWith('Send'):
   {
     bot.onText(/\/Send (.+)/, (msg, match) => {
       const chatId = msg.chat.id;
@@ -42,7 +42,7 @@ switch (true) {
     {
       bot.sendMessage(msg.chat.id,mssg)
     }*/
-  }
+  
 
  case text.startsWith('/ud'):
     const matce = text.match(/ud(\s+)(.+)/)

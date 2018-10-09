@@ -113,7 +113,7 @@ ud.term(definition).then((result) => {
     case text.startsWith('Send'):
     const mats = text.match(/\/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
     text.get(mats[2],mats[5])
-    
+    break
     case text.startsWith('Difine'):
     const matche = text.match(/Difine(\s+)(.+)/)
     dict.getDef(matche[2], null, function(getDef){

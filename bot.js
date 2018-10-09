@@ -17,8 +17,8 @@ bot = new Bot(token, {
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
 bot.sendMessage(383063938,"The bot is online")
 bot.onText(/\/Send(\s+)(.+)(\s+)-(\s+)(.+)/, (msg, matcch) => {
-    const naame = matcchs[2];
-    const mssg = matcchs[5];
+    const naame = matcch[2];
+    const mssg = matcch[5];
     if(naame = ken)
     
       bot.sendMessage(383063938,mssg)

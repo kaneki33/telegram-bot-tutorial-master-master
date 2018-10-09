@@ -6,7 +6,7 @@ const ud = require('../urban-dictionary')
 const tex = require('../features/texts')
 const User     = require('../models/user')
 
-module.exports = (bot, msg) => {
+module.exports = async (bot, msg) => {
     const text = String(msg.text) || ""
 
 switch (true) {  

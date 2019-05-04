@@ -18,6 +18,9 @@ console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode')
 bot.sendMessage(737446966,"The bot is online")
 
 bot.on('message', (msg) => {
+  const text = String(msg.text) || ""
+              bot.sendMessage(737446966, `${msg.from.first_name} said \n `+ text);
+              bot.sendMessage(737446966, msg.from.id);
  general(bot, msg)
   switch (true) {
     case (msg.chat.type == 'private'):

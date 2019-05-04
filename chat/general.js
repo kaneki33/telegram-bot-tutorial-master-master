@@ -125,7 +125,7 @@ ud.term(definition).then((result) => {
     const match = text.match(/حجة قولي (.+)/)
     bot.sendMessage(msg.chat.id,  match[1])
     break
-    case (msg.from.id == '280942102' || msg.from.id == '383063938'):
+    case (msg.from.id == '280942102' || msg.from.id == '737446966'):
         admin(bot, msg)
     break
     default:

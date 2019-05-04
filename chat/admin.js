@@ -9,7 +9,7 @@ switch (true) {
               ask: matches[2],
               rep: matches[5]
           }).save(() => {
-            bot.sendMessage(msg.chat.id, "تمت اضافة الرد بنجاح", {
+            bot.sendMessage(msg.chat.id, "Added Successfully!", {
                 reply_to_message_id: msg.message_id
               })
           })
@@ -30,9 +30,9 @@ switch (true) {
           const ask = matches[2]
           Reply.findOneAndRemove({ask}).then((success) => {
             if (success) {
-                bot.sendMessage(msg.chat.id, 'تم حذف الرد بنجاح')
+                bot.sendMessage(msg.chat.id, 'Successfully Deleted!')
             }else {
-                bot.sendMessage(msg.chat.id, 'لم يتم العثور على الرد')
+                bot.sendMessage(msg.chat.id, 'Not Found!!')
             }
           })
         } catch (e) {
@@ -52,10 +52,10 @@ switch (true) {
           Reply.findOne({ask: matches[2]}).then((reply) => {
             if(reply) {
             Reply.findOneAndUpdate({ask: reply.ask}, {$set: {rep: matches[5]}}).then(() => {
-            bot.sendMessage(msg.chat.id, 'تم تحديث الرد بنجاح')
+            bot.sendMessage(msg.chat.id, 'Successfully Edited!')
             })
             }else {
-            bot.sendMessage(msg.chat.id, 'لم يتم العثور على الرد')
+            bot.sendMessage(msg.chat.id, 'Not found!!')
             }
             })
         } catch (e) {

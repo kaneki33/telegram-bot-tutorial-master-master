@@ -8,7 +8,7 @@ module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 
 switch (true) {  
-
+/*
  case text.startsWith('/ud'):
  {
     const matce = text.match(/ud(\s+)(.+)/)
@@ -84,7 +84,7 @@ ud.term(definition).then((result) => {
 }).catch((error) => {
   console.error(error.message)
 })
-        break 
+        break */
 }
     case text.startsWith('Lyrics'):
     const matches = text.match(/Lyric(\s+)(.+)(\s+)-(\s+)(.+)/)
@@ -101,7 +101,7 @@ ud.term(definition).then((result) => {
     console.log(err)
     })
         break 
-        /*
+        
     case text.startsWith('\/send'):
 
         const mattches = text.match(/\/send(\s+)(.+)(\s+)-(\s+)(.+)/)
@@ -109,7 +109,7 @@ ud.term(definition).then((result) => {
         var txt = mattches[5];
         bot.sendMessage(idd, txt);
         break
-        */
+        
         case text.startsWith('Difine'):	
     const matche = text.match(/Difine(\s+)(.+)/)	
     dict.getDef(matche[2], null, function(getDef){	

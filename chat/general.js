@@ -12,8 +12,8 @@ switch (true) {
  case text.startsWith('/ud'):
  {
     const matce = text.match(/ud(\s+)(.+)/)
-   // const Word = matce[2]
-    //var definition = Word;
+    const Word = matce[2]
+    var definition = Word;
     var id = 217456
 
 // defid callback example.

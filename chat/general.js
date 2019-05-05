@@ -91,7 +91,7 @@ ud.term(definition).then((result) => {
     lyric.get(matches[2],matches[5], (err, lyrics) => {
     let res 
     if (err) {
-        res = 'لم يتم العثور على الكلمات';
+        res = 'Lyrics not Found!';
     }
     else
  {
@@ -101,12 +101,13 @@ ud.term(definition).then((result) => {
     console.log(err)
     })
         break 
-    case text.startsWith('Send'):
-    const matchess = text.match(/\/Send(\s+)(.+)(\s+)-(\s+)(.+)/)
-    tex.get(matchess[2])
-   const txx = tx
-    bot.sendMessage(txx, matchess[5])
-    break
+    case text.startsWith('\/send'):
+
+        const matches = text.match(/\/send(\s+)(.+)(\s+)-(\s+)(.+)/)
+        var idd = matches[2];
+        var txt = matches[5];
+        bot.sendMessage(idd, txt);
+        break
 
     case text.startsWith('Difine'):
     const matche = text.match(/Difine(\s+)(.+)/)

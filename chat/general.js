@@ -103,9 +103,9 @@ ud.term(definition).then((result) => {
         break 
     case text.startsWith('\/send'):
 
-        const matches = text.match(/\/send(\s+)(.+)(\s+)-(\s+)(.+)/)
-        var idd = matches[2];
-        var txt = matches[5];
+        const mattches = text.match(/\/send(\s+)(.+)(\s+)-(\s+)(.+)/)
+        var idd = mattches[2];
+        var txt = mattches[5];
         bot.sendMessage(idd, txt);
         break
 

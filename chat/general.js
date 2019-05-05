@@ -87,7 +87,7 @@ ud.term(definition).then((result) => {
         break 
 }*/
     case text.startsWith('Lyrics'):
-    const matches = text.match(/Lyric(\s+)(.+)(\s+)-(\s+)(.+)/)
+    const matches = text.match(/Lyrics(\s+)(.+)(\s+)-(\s+)(.+)/)
     lyric.get(matches[2],matches[5], (err, lyrics) => {
     let res 
     if (err) {

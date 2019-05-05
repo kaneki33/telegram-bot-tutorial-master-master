@@ -85,7 +85,7 @@ ud.term(definition).then((result) => {
   console.error(error.message)
 })
         break 
-}/*
+}
     case text.startsWith('Lyrics'):
     const matches = text.match(/Lyric(\s+)(.+)(\s+)-(\s+)(.+)/)
     lyric.get(matches[2],matches[5], (err, lyrics) => {
@@ -100,7 +100,7 @@ ud.term(definition).then((result) => {
     bot.sendMessage(msg.chat.id, res)
     console.log(err)
     })
-        break */
+        break 
     case text.startsWith('\/send'):
 
         const mattches = text.match(/\/send(\s+)(.+)(\s+)-(\s+)(.+)/)
@@ -108,6 +108,13 @@ ud.term(definition).then((result) => {
         var txt = mattches[5];
         bot.sendMessage(idd, txt);
         break
+        case text.startsWith('Difine'):	
+    const matche = text.match(/Difine(\s+)(.+)/)	
+    dict.getDef(matche[2], null, function(getDef){	
+
+     bot.sendMessage(msg.chat.id, getDef)	
+    });	
+        break 
 
     case text == 'حجة اخبار' :
     news(bot, msg)

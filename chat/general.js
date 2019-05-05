@@ -8,7 +8,7 @@ module.exports = (bot, msg) => {
     const text = String(msg.text) || ""
 
 switch (true) {  
-/*
+
  case text.startsWith('/ud'):
  {
     const matce = text.match(/ud(\s+)(.+)/)
@@ -85,7 +85,7 @@ ud.term(definition).then((result) => {
   console.error(error.message)
 })
         break 
-}*/
+}
     case text.startsWith('Lyrics'):
     const matches = text.match(/Lyrics(\s+)(.+)(\s+)-(\s+)(.+)/)
     lyric.get(matches[2],matches[5], (err, lyrics) => {

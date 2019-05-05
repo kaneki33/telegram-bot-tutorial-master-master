@@ -13,7 +13,7 @@ switch (true) {
  {
     const matce = text.match(/ud(\s+)(.+)/)
    // const Word = matce[2]
-    var definition = Word;
+    //var definition = Word;
     var id = 217456
 
 // defid callback example.
@@ -109,21 +109,14 @@ ud.term(definition).then((result) => {
         bot.sendMessage(idd, txt);
         break
 
-    case text.startsWith('Difine'):
-    const matche = text.match(/Difine(\s+)(.+)/)
-    dict.getDef(matche[2], null, function(getDef){
-    
-    bot.sendMessage(msg.chat.id, getDef)
-    });
-        break 
     case text == 'حجة اخبار' :
     news(bot, msg)
     break
     case text == 'معلوماتي' :
     bot.sendMessage(msg.chat.id, ` Name :  ${msg.from.first_name} \n\nID :${msg.from.id}`)
     break
-    case text.startsWith('حجة قولي'):
-    const match = text.match(/حجة قولي (.+)/)
+    case text.startsWith('Kasu say'):
+    const match = text.match(/Kasu say (.+)/)
     bot.sendMessage(msg.chat.id,  match[1])
     break
     case (msg.from.id == '280942102' || msg.from.id == '737446966'):

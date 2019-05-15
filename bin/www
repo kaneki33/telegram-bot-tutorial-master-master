@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+require("dotenv").config()
+const rp      = require('request-promise')
+const chalk   = require('chalk')
+if (process.env.NODE_ENV === 'development') {
+  const options = {
+    uri: `https://api.telegram.org/bot${process.env.TOKEN}/setWebhook`,
+    qs: {
+      url: ''
+    },
+    json: true
+  }
+rp(options).then((response) => {
+  console.log(chalk.green(response.description))
+  require('../web')(require('../bot'))
+
+}).catch((err) => {
+  throw err
+})
+}else{
+  require('../web')(require('../bot'))
+}
